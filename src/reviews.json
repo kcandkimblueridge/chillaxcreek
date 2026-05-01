@@ -1,52 +1,351 @@
-[
-  {
-    "name": "Josephine",
-    "date": "2024-08-04",
-    "text": "Our family of five had an incredible stay at the Chilax Cabin. The thoughtfulness that went into creating an awesome experience was evident from the moment we arrived. The cabin itself is beautiful, with a well-maintained interior that made us feel right at home. The property outside is equally stunning, offering a peaceful and relaxing environment. The hosts were very responsive and ensured that the cabin was well-stocked with everything we needed for our stay. We highly recommend staying at this property for anyone looking for a perfect getaway."
+{
+  "aggregate": {
+    "rating": 4.96,
+    "count": 49
   },
-  {
-    "name": "Shawnee",
-    "date": "2024-07-28",
-    "text": "We had an amazing family vacation! The location was beautiful, clean and we loved the creek!"
-  },
-  {
-    "name": "Debra",
-    "date": "2024-07-23",
-    "text": "We had a lovely time relaxing at the Chilllax cabin. It is very dog friendly. All the special touches made us all feel right at home . Looking forward to another visit."
-  },
-  {
-    "name": "Kayla",
-    "date": "2024-07-19",
-    "text": "I would give this 10 stars if I could!! Unpack and Chillax was the most amazing Airbnb my family and I have ever stayed at! The pictures do not do it justice! It is even more beautiful and accommodating than it looks in the photos. Every single detail was carefully thought about. You literally only need groceries and your bug spray. The cabin is fully equipped with everything to cook with, all the games, cozy atmosphere and thoughtful things like a smores bar. My family and I had the best time and even though our dogs snuck off, Alton and Mary were rockstars in quickly getting the message out and we found our dogs within like 30 minutes. They had great communication and even allowed us to check in early. We are already missing it and planning our next trip. If you have any hesitations, DON\u2019T just book the trip! \u2764\ufe0f"
-  },
-  {
-    "name": "Meredith",
-    "date": "2024-07-14",
-    "text": "We visit many Airbnbs around the world and this was definitely one of the best! It is clean, perfect location, private lot, wonderful amenities, lovely hosts, and they allow dogs AND have EV charging! Literally could not be better if they tried! We drove away at check out and were already planning our next getaway there! :)"
-  },
-  {
-    "name": "Robin",
-    "date": "2024-07-07",
-    "text": "Wonderful place host is very kind and helpful Very relaxing place for families to get away"
-  },
-  {
-    "name": "Oscar",
-    "date": "2024-06-29",
-    "text": "Great responsive hosts! Close to downtown Blue ridge and ideal for anyone looking for a golf trip over at Old Tocoa Farms!"
-  },
-  {
-    "name": "Lauren",
-    "date": "2024-06-23",
-    "text": "The Chillax Cabin was very nice it truly exceeded our expectations. It was extremely clean, honestly the cleanest Airbnb we have stayed at. It is nicely decorated and it felt very homey. There was lots to do for the kids, smores, creek, and they loved the game room and built in beds. We felt right at home here and wish we stayed longer. We would definitely stay at the Chillax Cabin again when in the area."
-  },
-  {
-    "name": "John",
-    "date": "2024-06-18",
-    "text": "I first want to start out and say Mary was an outstanding Host, she responded in minutes. I was looking for a cabin big enough for my wife, her parents, my parents and I with some water for my three labs, So, they loved the creek that ran right by the property. Short story there were so many wild animals while we were walking along the creek, pepper started chasing a baby deer down through the creek and the other labs had to join in and mama deer were chasing them, while me and wife were chasing them all, felt like a movie. But the happy ending we all caught up together and baby deer was fine and left with mama deer, and they probably had a memory like ours worth sharing also. And we seen allot of deer and the baby deer feeding in the back when we woke. About the location very secluded, only seen neighbors sometimes across the creek but very friendly as is the rooster lol. The pictures do it no justice it is very beautiful. The fireplace outside is massive, and great for smores."
-  },
-  {
-    "name": "Abigail",
-    "date": "2024-06-14",
-    "text": "Perfect cabin for me and my family! We had a fun and relaxing stay and made great use of the amenities. It had all the essentials with thoughtful additions that we thoroughly enjoyed and appreciated. The smores kit, the matching robes, the board games, blender, the grill, the extra dog leash, tv in every room. What a wonderful cabin! Both the kids and adults used the game room and hot tub a great deal, not to mention the kitchen. The creek and bonfire was a nice plus. Well stocked, well maintained and just awesome!"
-  }
-]
+  "reviews": [
+    {
+      "name": "Nancy",
+      "date": "2026-03-28",
+      "text": "We enjoyed our stay at their cabin! It was clean with plenty of things to do at the cabin including the hot tub, fire pit, games, air hockey and billiards. The outside patio with fireplace and TV were great for watching March madness. Plenty of room for everyone to spread out and relax. Thank you!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Katie",
+      "date": "2026-03-23",
+      "text": "Aside from the unanticipated steep driveway the stay was great. The cabin offered plenty of room for our group of 7 to spread out. There was plenty to do for both kids and adults, and nice space to also just relax. It was stocked with most of the basics. A little more pantry room for snacks would have been great. But overall I’d stay again.",
+      "stars": 4,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Stacey",
+      "date": "2026-03-18",
+      "text": "Loved the views and giant lot, it was perfect for letting the kids and dog run around!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Johnny",
+      "date": "2026-03-15",
+      "text": "Our stay was excellent!! A great way to get away from the city and unwind. The perfect place to decompress and not have to worry about a thing. A peaceful place to reconnect, recharge and relax with family. Certainly worth the trip and we hope to do it again very soon!!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Kenyatta",
+      "date": "2026-03-05",
+      "text": "Great house and better host.... i will definitely be back!!!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "David",
+      "date": "2026-01-12",
+      "text": "Beautiful cabin on a beautiful property. Highly recommended.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Angela",
+      "date": "2026-01-02",
+      "text": "Our family loved the stay at the cabin. So much to do for the kids to stay busy and the place was beautiful. Couldn’t have asked for a better place to have our last family vacation for 2025. Thank you so much for giving us the opportunity to stay at your cabin.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Elaine",
+      "date": "2025-12-27",
+      "text": "Our family wanted to spend a memorable Christmas away from home. The cabin allowed us to bond with lots of games to play. We felt the season with the beautiful decorations within the cabin. the fireplaces throughout made the experience even better. awe would 100% return.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Gloriana",
+      "date": "2025-12-22",
+      "text": "This cabin is absolutely beautiful. It was decorated for Christmas which brought the spirit. It has something to do for everyone, the hot tub, games, s’mores, all included. We definitely will be back. Alton and Mary were amazing and very understanding when questions asked, we felt welcomed and right at home.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "LaTrelle",
+      "date": "2025-12-07",
+      "text": "We stay in BnBs often and this quickly rose to one of my favorites. They have thought of everything. I’m not sure where they found their cleaners but they’re the best I’ve seen! The cabin is so well thought out with tons of amenities, games, fully stocked kitchen, comfortable beds, beautiful setting, actually a clean hot tub, and just about everything you can think of. This host were wonderful to work with. So many games for families to play and TVs in every room. If you get a chance to go around Christmas do it!! The cabin is beautifully decorated. This was my 50th bday and this cabin was perfect to unplug and unwind. Chillaxin is the perfect name! The sound of the creek and quietness of the surroundings were so peaceful. It was peaceful all except for us cheering when Georgia put the smack on Alabama in the SEC championship. So many memories made! Thank you for a wonderful weekend.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Julie",
+      "date": "2025-11-30",
+      "text": "Our family really enjoyed our Thanksgiving stay! All the details about the home in the listing description are accurate! The home is comfortable and clean! The home is 20 minutes from town/local grocery etc. The home is well equipped, and makes you feel like you’re at home! A few details to note that might make a difference for some…The driveway is very steep. The stairs to the creek are uneven.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Max",
+      "date": "2025-11-11",
+      "text": "Awesome spot with even better owners!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Brianna",
+      "date": "2025-10-28",
+      "text": "My family and I had the best long weekend getaway here! It was nice to go out and do things, but it was also very nice to be able to stay at the Airbnb and have activities and things to do there as well.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Alejandro",
+      "date": "2025-10-20",
+      "text": "Home was awesome. The outside fireplace area was very enjoyable. Coming from south Florida we don’t get a chance to enjoy a fireplace. Thanks for sharing your home with us.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Sarah",
+      "date": "2025-10-11",
+      "text": "Beautiful and well-appointed cabin just as described!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Lindsey",
+      "date": "2025-10-07",
+      "text": "We had a great time staying at Chillax. Our family of 6 plus our 2 pups had plenty of space inside and out. The creek was great for the kids. We appreciated the tasteful decor and the special little touches like the s’mores and sparkling cider. We would definitely stay here again!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Vickie",
+      "date": "2025-09-14",
+      "text": "This place is amazing. The outdoor fireplace and TV was perfect for relaxing and watching football after a day of rafting. I'm looking forward to booking again. it's only a 45-50 minute drive to whitewater rafting. You will not be disappointed.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Amanda",
+      "date": "2025-09-05",
+      "text": "The cabin was clean, comfortable, and relaxing! We especially enjoyed hanging out on the deck areas and hearing the sound of the nearby creek. The kitchen was well stocked and we loved cooking meals in both it and on the Blackstone grill.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Al",
+      "date": "2025-08-12",
+      "text": "Great home, tons of space, great location. Highly recommend! Hosts were super communicative, which made everything seamless",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Ian",
+      "date": "2025-08-02",
+      "text": "My family loved the cabin and the hosts left lots of games and activities for the kids! The smores kit and firewood was a great touch. Bathrooms were beautiful and lighting inside and outside was well thought out. The kids enjoyed playing in the creek and exploring the huge backyard! Lots of other thoughtful touches around the cabin to make our stay very comfortable. The air-conditioning worked perfectly as well. Jacuzzi was preheated and easy to operate. Plenty of towels for everyone which is kind of my pet peeve when there aren't enough. The cabin is just short of 20 mins from town which wasn't bad with the beautiful scenery to look at during the trip. Definitely go to the entrance of Walmart and you will see lots of banners up posting different festivals and seasonal activities to do. 5 star trip, the kids had a fantastic time!!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Taylor",
+      "date": "2025-07-25",
+      "text": "The home, property, and location were all perfect. The responsive guidance and amenities were more than we could ask for. Amazing vacation home.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Hayley",
+      "date": "2025-07-10",
+      "text": "Alton and Mary are the perfect hosts. So easy to communicate with and super friendly. You can count on them to respond immediately if you have any problems whatsoever, but I doubt you'll need to. The place is perfect. My adult children and two grandchildren really enjoyed themselves. The creek was nice and cold on a hot summer day, and my grandkids especially loved the fire pit. Watching the fireflies from the hot tub in the evenings was so entertaining and relaxing. The location was perfect. Only 20 minute drive to downtown Blue Ridge. And we highly recommend Blue Ridge Lake. So beautiful. I really don't think you'll find a better Airbnb in the area, especially for the price. It's a beautiful piece of property and a beautiful cabin.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "SarahJoy",
+      "date": "2025-07-09",
+      "text": "We had the most incredible stay at the Netflix and Chill Cabin. The three decks were absolutely amazing and we spent hours (my husband and I plus two kids 9 and 5) relaxing and enjoying the peaceful surroundings. We used the outdoor flat-top griddle for every single meal and it was such a fun and easy way to cook. Our dog had the best time exploring and hanging out with us which made the trip even more special. The beds were unbelievably comfortable and we all slept so well. The showers felt spa-like and were just glorious. We also loved the fireplaces and making s’mores under the stars was pure magic. Every detail of this cabin made it the perfect getaway and Alton was a fantastic host. We cannot wait to come back.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Erin",
+      "date": "2025-07-05",
+      "text": "The location was perfect and the home was spacious and clean. Plenty of room for our party of six and our dogs. Very private property, we occasionally heard others, but we never saw anyone else except for some deer. Our dogs absolutely loved the creek. We loved lounging on the beautiful main deck looking out at the property and listening to the peaceful sounds of the creek. Alton and Mary were super helpful and responsive and always available to answer our questions. “Highly recommended!” “Our stay was fantastic!”",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Monica",
+      "date": "2025-06-23",
+      "text": "We really enjoyed our stay on this beautiful property! Would definitely love the chance to return again sometime.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Phillip",
+      "date": "2025-06-19",
+      "text": "Loved it will definitely be returning!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Robert",
+      "date": "2025-06-16",
+      "text": "Enjoyed our stay very much. Great for the dog. Just a few minor items: dining table lights need to be on dimmer (too bright), no Kleenex, roof drainage created a big hole at the ev charger (a bit dangerous). Otherwise the stay was great. Would highly recommend.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Cleber",
+      "date": "2025-06-08",
+      "text": "From the moment we arrived at Chillax Cabin we felt just that, chill and relaxed!! The cabin is beautifully decorated and immaculate!! We enjoyed waking up to the sound of the creek, drinking our coffee on the expansive decks and walking our dogs on the private road. We enjoyed playing hide and go seek in the dark as well as the games provided by our hosts. Our family enjoyed everyday we spent here. We love the mountains and North GA and this is possibly one of our favorite stays🥰❣️ Thank you for creating such a great space for all to enjoy!!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Cassandra",
+      "date": "2025-06-05",
+      "text": "I celebrated my 42nd birthday at Chillax with some girlfriends and my dog. The cabin was so incredibly beautiful and warm! We felt immediately at home and loved that we could enjoy the common spaces but also our own private rooms and bathrooms. We enjoyed every single minute and I can't wait to go back again!!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Richard",
+      "date": "2025-05-29",
+      "text": "The hosts have something special here. The cabin, the provisions provided, location, the furnishings all 5 star. The issue for our stay was the AC. It was warm in Blue Ridge the first couple of days of our stay. The hosts immediately resolved the first issue with the AC but once working it was programed to be 75 and no less even when adjusted lower and the house was hot. They communicated but for a short stay it was an issue and possibly made a perfect stay less so.",
+      "stars": 4,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Javier",
+      "date": "2025-04-14",
+      "text": "Wow, this Blue Ridge cabin was a total win! It’s super clean, loaded with everything you need, and the location is great. Our kids loved the hot tub, the game room, the fire pit, and the creek out back. The host was very friendly and easy to work with. We’re already itching to come back!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Lauren",
+      "date": "2025-04-13",
+      "text": "I couldn’t stop researching places to stay with our kids for spring break until I found this one. Riverside, gorgeous house, beautiful surroundings, dog friendly, so many fun games for our kids to play with - what put me over the top were the reviews, and this place lived up to every single 5 star review in the listing. We walked in the door and the kids ran all over the house pointing out everything with “oh my god!” and “this is so cool!” — the air hockey, the ping pong, the s’mores set up — it was awesome. My favorite were the decks. I loved being outside by the fireplace but still under cover while it was sprinkling, and the deck with the lounge chairs off of the primary room was magical. On top of all of that, Mary and Alton were so kind, checking in on us and making sure we had everything we needed. Thank you both! We hope to come back again soon!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Robert",
+      "date": "2025-03-11",
+      "text": "I really don’t think there’s anything else you could ask for, want, or need at this place ! The attention to detail, the extra thought and care about all things big and little are a part of this cabin! Great layout of the house, lots of fun game options, fireplaces throughout, very nice hot tub, I mean I could go on and on truthfully. If you’re looking for a fun and awesome place to stay, look no further than Chillax. You won’t be disappointed.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Taurus",
+      "date": "2025-02-16",
+      "text": "So I am going to be honest. The worst part about this listing is leaving. We went for a small getaway and that’s exactly what it felt like. The home is absolutely beautiful. The pictures do not give it justice. The hosts that maintain this booking is absolutely amazing. Every need or want was provided. Even in a short notice. Between the peaceful surroundings and the host, I will definitely be booking again. I will give this home a 10/10. I say home because that’s exactly what this home gave. It’s pet friendly and family friendly. We enjoyed ourselves. 10/10!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Chris",
+      "date": "2025-01-21",
+      "text": "Not sure where to start. From the booking, communication along the way, to the cleanest AirBNB we have ever booked. Mary and Alton were very communicative and have thought through every detail to ensure your stay is perfect. We can’t wait to visit again!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Jeff",
+      "date": "2025-01-15",
+      "text": "Mary and Alton made our stay so amazing. we booked last minute for our kids to see snow. I asked if the property would be good for sledding. Not only was Mary right about the yard being perfect for sledding, she also had 2 sleds and a shovel waiting on the porch for us. By far the best host we have experienced. every question was answered within minutes. Can't wait to be back",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Kathleen",
+      "date": "2025-01-02",
+      "text": "Chillax was top notch for our New Year’s family getaway. The cabin was beautifully decorated for Christmas, had everything we needed for chillaxing and fun. We especially enjoyed the outdoor fireplace and making s’mores. The cabin is very clean, beds were comfortable and the kitchen had everything we needed for cooking. Alton and Mary responded quickly to any questions we had. They even checked in within us when the area had a pretty bad storm. We highly recommend staying here, it will not disappoint.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Kelsey",
+      "date": "2024-12-23",
+      "text": "Alton and Mary have created a beautiful cabin and atmosphere. The pictures are just as you see when you get there. It’s a wonderful spot to relax with your friends and family. Lots to do and the decorations at Christmas were a beautiful touch to make it feel like the holidays. Would recommend to anyone interested wanting to get away in the blue ridge area.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Jonathan",
+      "date": "2024-12-23",
+      "text": "The cabin was gorgeous!!! Would highly recommend. Completely worth it and all the beautiful amenities. Alton and Mary are amazing hosts both reply super fast and extremely friendly. We definitely will be returning! Such a fun getaway. Also wanna mention how clean it was.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Kelsey",
+      "date": "2024-12-15",
+      "text": "Best Cabin trip yet, this place is perfect for a weekend getaway with the pups. It had everything we needed to cook and spend a straight 4 days there - stocked kitchen and all you need is groceries. SO many games and things to do- air hockey and pool were our favs. Nice private area on a big open lot. Very homey. We enjoyed spending time in the backyard with a fire and the pups running around. S’mores supplies were included as was firewood! Lots of space with 3 bedrooms and a nook with 2 twin beds upstairs. Loved the fireplaces and hot tub!! Watching Netflix on the deck with the fireplace was amazing. Host was AWESOME. So kind, quick to respond and flexible! Can’t think of one negative thing to say, all I know is we will be back!!!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "J",
+      "date": "2024-12-09",
+      "text": "“Unwind and Chillax” is just what we needed for our party of 6. Great location! Only 20 min from downtown Blue Ridge. The vibe at the cabin was so chill and relaxing, all while able to keep our kids entertained as well! Mary and Alton were very friendly and we will definitely be back in the near future!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Ammey",
+      "date": "2024-12-05",
+      "text": "We enjoyed a wonderful stay at the cabin. It was absolutely amazing. So clean, adorably decorated with amazing amenities. We truly enjoyed this wonderful retreat in Blue Ridge and hope to return in the future!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Lauren",
+      "date": "2024-11-21",
+      "text": "We had both a girls weekend and romantic weekend at this location. There was plenty of space, everything we could need, perfect location to DT blue ridge. The host were amazing, one of the best experiences we’ve had on AirBnb",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Beau",
+      "date": "2024-11-06",
+      "text": "Beautiful home and owners were very helpful!! Highly recommend!!",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Latoya",
+      "date": "2024-11-04",
+      "text": "Where do I begin with my experience at Chillax? We had an extraordinary time. The photographs do not adequately capture the beauty of this exquisite cabin, which was meticulously equipped with all the amenities, including games. All that was required was to bring ourselves and fully relax. I had an itinerary that was highly impactful, with our activities seamlessly integrated. I was accompanied by my two young adults, my husband, and the experience was truly unforgettable. My children expressed a strong desire to extend our stay, as they were captivated by the cabin’s offerings. Consequently, we canceled the majority of our planned activities and opted to remain and fully immerse ourselves in the cabin’s ambiance. I wholeheartedly intend to make this an annual tradition. It is also worth mentioning the exceptional responsiveness of Alton and Mary, who consistently ensured that we were enjoying ourselves. If I could give a rating of 100 stars, I would do so without hesitation.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Teak",
+      "date": "2024-10-29",
+      "text": "Highly recommended this place, super clean",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Andrea",
+      "date": "2024-10-20",
+      "text": "We enjoyed this home for our yearly family vacation with our pups! 🐶❤️ Very Clean",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Jodi",
+      "date": "2024-10-08",
+      "text": "Chillax was fantastic!Very clean and well appointed. Had everything we needed and then some. We loved the covered patio with sofa, fireplace and TV. We spent all of our time there when we were at the cabin! Plenty of firewood provided. There is a lot of room for your furry friends to run and play and even a clean up station provided. A couple of things to note even though they weren’t an issue for us are that the driveway is steep and gravel so 2 wheel drives might have traction issues and the stairway leading to the fire pit and stream is also steep but it is well lit. Again not an issue for us but if you have elderly or little ones traveling with you, you should be aware. Alton and Mary were wonderful hosts! Very helpful and responsive.",
+      "stars": 5,
+      "source": "Airbnb"
+    },
+    {
+      "name": "Jaclyn",
+      "date": "2024-10-01",
+      "text": "Wow! The cabin exceeded our expectations, and we look forward to going back and staying again! We are from Florida and our trip coincided with hurricane Helene. It was great to already have a place to evacuate too but also brought rain and the hurricane to GA! The cabin was such a cozy place to hunker down and offered us peace during a very stressful time. (We never even lost power at the cabin). All of the balconies offer great lounging spaces and help invite the outdoors inside. We used the outdoor fireplace and snuggled under blankets outside with our dogs while it rained. The cabin is the perfect size for a family or a getaway with friends. The three bedrooms ( 1 on each floor) offer lots of privacy. The kitchen is stocked with literally everything you need which is awesome. The provided smores were a sweet surprise and nice touch =) We highly recommend this cabin to anyone! The dogs loved the huge yard and creek. The hosts were super kind too. We will be back, thank you!",
+      "stars": 5,
+      "source": "Airbnb"
+    }
+  ]
+}

@@ -1,115 +1,82 @@
 #!/usr/bin/env node
-// Refreshes src/reviews.json with the latest reviews from the Airbnb listing.
-// Run periodically (manually or via a scheduled GitHub Action) to keep the
-// homepage reviews fresh. The committed JSON is what the site builds against.
+// Refreshes src/reviews.json from the OwnerRez v2 API.
+// Runs at build time in CI; also runnable locally with env vars.
 //
-// Usage:  node scripts/scrape-reviews.mjs
+// Required env vars:
+//   OWNERREZ_EMAIL  — your OwnerRez login email
+//   OWNERREZ_PAT    — Personal Access Token (starts with pt_)
+// Optional:
+//   OWNERREZ_PROPERTY_ID — defaults to 411874 (Chillax Creeks)
 //
-// Requires Node 22+ (uses native fetch).
+// Usage:  OWNERREZ_EMAIL=… OWNERREZ_PAT=… node scripts/scrape-reviews.mjs
 
 import { writeFile } from 'node:fs/promises';
 
-const LISTING_URL =
-  'https://www.airbnb.com/rooms/974620110074586016';
+const EMAIL = process.env.OWNERREZ_EMAIL;
+const PAT = process.env.OWNERREZ_PAT;
+const PROPERTY_ID = process.env.OWNERREZ_PROPERTY_ID || '411874';
 const OUT_PATH = new URL('../src/reviews.json', import.meta.url);
 
-const UA =
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+if (!EMAIL || !PAT) {
+  console.error('Missing OWNERREZ_EMAIL or OWNERREZ_PAT — keeping existing reviews.json.');
+  process.exit(0);
+}
 
-async function main() {
-  const res = await fetch(LISTING_URL, { headers: { 'User-Agent': UA } });
-  if (!res.ok) throw new Error(`Airbnb returned ${res.status}`);
-  const html = await res.text();
+const auth = 'Basic ' + Buffer.from(`${EMAIL}:${PAT}`).toString('base64');
 
-  // Pull rating + count from JSON-LD VacationRental block
-  const ldMatches = html.match(
-    /<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g
-  );
-  let aggregate = null;
-  for (const block of ldMatches ?? []) {
-    const inner = block.replace(/<[^>]+>/g, '');
-    try {
-      const data = JSON.parse(inner);
-      if (data['@type'] === 'VacationRental' && data.aggregateRating) {
-        aggregate = {
-          rating: Number(data.aggregateRating.ratingValue),
-          count: Number(data.aggregateRating.reviewCount ?? 0),
-        };
-        break;
-      }
-    } catch {}
-  }
+async function fetchPage(offset = 0, limit = 100) {
+  const url = new URL('https://api.ownerrez.com/v2/reviews');
+  url.searchParams.set('property_id', PROPERTY_ID);
+  url.searchParams.set('host_review', 'false');
+  url.searchParams.set('active', 'true');
+  url.searchParams.set('include_guest', 'true');
+  url.searchParams.set('limit', String(limit));
+  url.searchParams.set('offset', String(offset));
 
-  // Pull individual reviews from the deferred client state.
-  // Airbnb's PDP only returns a limited set in-page (~6); for more,
-  // we'd need their GraphQL API which requires a session token.
-  const stateMatch = html.match(
-    /<script id="data-deferred-state-0"[^>]*>([\s\S]*?)<\/script>/
-  );
-  const reviews = [];
-  if (stateMatch) {
-    const state = JSON.parse(decodeHtml(stateMatch[1]));
-    walk(state, (key, val) => {
-      if (
-        typeof val === 'object' &&
-        val !== null &&
-        typeof val.comments === 'string' &&
-        val.comments.length > 30 &&
-        val.reviewer
-      ) {
-        reviews.push({
-          name: val.reviewer.firstName ?? val.reviewer.host?.smartName ?? 'Guest',
-          date: val.localizedDate ?? val.createdAt ?? '',
-          text: val.comments.replace(/\s+/g, ' ').trim(),
-        });
-      }
-    });
-  }
-
-  // De-dupe by (name, date, first 40 chars of text)
-  const seen = new Set();
-  const deduped = reviews.filter((r) => {
-    const k = `${r.name}|${r.date}|${r.text.slice(0, 40)}`;
-    if (seen.has(k)) return false;
-    seen.add(k);
-    return true;
+  const res = await fetch(url, {
+    headers: { Authorization: auth, Accept: 'application/json' },
   });
+  if (!res.ok) throw new Error(`OwnerRez ${res.status}: ${await res.text()}`);
+  return res.json();
+}
 
-  const out = { aggregate, reviews: deduped };
-  await writeFile(OUT_PATH, JSON.stringify(deduped.length ? deduped : await loadFallback(), null, 2));
-  console.log(
-    `Scraped ${deduped.length} reviews. Aggregate: ${aggregate?.rating ?? '?'} (${aggregate?.count ?? '?'})`
-  );
-  if (!deduped.length) {
-    console.log('Airbnb returned no inline reviews — kept existing src/reviews.json.');
+async function fetchAll() {
+  const all = [];
+  let offset = 0;
+  const limit = 100;
+  while (true) {
+    const page = await fetchPage(offset, limit);
+    const items = page.items ?? [];
+    all.push(...items);
+    if (items.length < limit) break;
+    offset += limit;
   }
+  return all;
 }
 
-function walk(obj, fn, key = null) {
-  if (obj === null || typeof obj !== 'object') return;
-  fn(key, obj);
-  for (const k in obj) walk(obj[k], fn, k);
-}
+const items = await fetchAll();
 
-function decodeHtml(s) {
-  return s
-    .replace(/&quot;/g, '"')
-    .replace(/&apos;/g, "'")
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&amp;/g, '&');
-}
+const reviews = items
+  .map((r) => ({
+    name: r.guest?.first_name || 'Guest',
+    date: (r.date || r.created_utc || '').slice(0, 10),
+    text: (r.body || '').replace(/\s+/g, ' ').trim(),
+    stars: r.stars,
+    source: r.listing_site || 'OwnerRez',
+  }))
+  .filter((r) => r.text.length > 0)
+  .sort((a, b) => b.date.localeCompare(a.date));
 
-async function loadFallback() {
-  const { readFile } = await import('node:fs/promises');
-  try {
-    return JSON.parse(await readFile(OUT_PATH, 'utf8'));
-  } catch {
-    return [];
-  }
-}
+const total = reviews.length;
+const ratingAvg =
+  total > 0
+    ? Math.round((reviews.reduce((s, r) => s + (r.stars || 0), 0) / total) * 100) / 100
+    : 0;
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+const out = {
+  aggregate: { rating: ratingAvg, count: total },
+  reviews,
+};
+
+await writeFile(OUT_PATH, JSON.stringify(out, null, 2) + '\n');
+console.log(`Wrote ${total} reviews to src/reviews.json (avg ${ratingAvg}★).`);

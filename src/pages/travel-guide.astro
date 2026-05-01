@@ -1,97 +1,282 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const categories = [
+  {
+    title: 'Outdoors',
+    icon: 'fa-mountain-sun',
+    items: [
+      'Blue Ridge Scenic Railway — vintage train ride along the Toccoa River',
+      'Mercier Orchards — pick-your-own apples, cider, and a great farm market',
+      'Toccoa River Swinging Bridge — short hike to one of the longest swinging bridges east of the Mississippi',
+      'Aska Adventure Area — mountain biking and hiking trails 10 minutes from the cabin',
+      'Lake Blue Ridge — kayaking, paddleboarding, and lakeside swimming',
+      'Long Creek Falls — easy waterfall hike off the Appalachian Trail',
+    ],
+  },
+  {
+    title: 'Fishing',
+    icon: 'fa-fish',
+    items: [
+      'The creek behind the cabin has minnows — fun for kids, not for keepers',
+      'McCaysville access point (20 min) is the closest top-rated trout fishing spot',
+      'You’ll need both a Georgia fishing license and a trout stamp ($10 each)',
+      'Both are available through the Outdoors GA app (good for a full year)',
+    ],
+  },
+  {
+    title: 'Food & Drink',
+    icon: 'fa-utensils',
+    items: [
+      'Harvest on Main — upscale farm-to-table in downtown Blue Ridge',
+      'The Boat Dock Restaurant — lakeside dining at Lake Blue Ridge',
+      'Black Sheep — laid-back gastropub favorite',
+      'Mercier Orchards Hard Cider Tasting Room',
+      'Grumpy Old Men Brewing — local craft beer',
+      'Serenberry Vineyards — small-batch winery 20 minutes out',
+    ],
+  },
+  {
+    title: 'Shopping & Town',
+    icon: 'fa-bag-shopping',
+    items: [
+      'Downtown Blue Ridge — boutique shops, art galleries, and weekend events',
+      'Out of the Blue Gallery — local art',
+      'Blue Ridge Olive Oil Company — tastings and pairings',
+      'The Cook’s Cottage — kitchen goods and local foods',
+    ],
+  },
+  {
+    title: 'Family-Friendly',
+    icon: 'fa-people-group',
+    items: [
+      'Old Toccoa Farm — golf and dining (Oscar from our reviews loved it!)',
+      'Tank Town USA — drive a real tank or excavator',
+      'Expedition: Bigfoot — the Sasquatch Museum (more fun than it sounds)',
+      'Mountain Adventure Ziplines',
+    ],
+  },
+  {
+    title: 'Practical',
+    icon: 'fa-circle-info',
+    items: [
+      'Closest grocery: Ingles in Blue Ridge (20 min)',
+      'Closest gas station: 5 minutes from the cabin',
+      'Free Level 2 EV charger on-site (ChargePoint, J1772 — Tesla adapter required)',
+      'Cell service: AT&T and Verizon both work; T-Mobile spotty',
+    ],
+  },
+];
 ---
 
 <BaseLayout
   title="Travel Guide | Chillax Creek"
   description="Things to do near Chillax Creek in Blue Ridge, Georgia — hiking, dining, wineries, fishing, and more."
 >
-  <section class="home-sec1" style="padding-top: 60px;">
+  <section class="tg-hero">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 text-center">
           <h6 class="red-heading">Explore Blue Ridge</h6>
           <h2>Travel Guide</h2>
-          <p>
-            Chillax Creek is just 20 minutes from downtown Blue Ridge — close enough for a quick
-            run for groceries or a sit-down dinner, far enough that you&rsquo;ll fall asleep to the
-            creek. Here&rsquo;s a starter list of what to do nearby.
+          <p class="tg-lede">
+            Chillax Creek is just 20 minutes from downtown Blue Ridge — close enough for a quick run
+            for groceries or a sit-down dinner, far enough that you&rsquo;ll fall asleep to the
+            creek. Here&rsquo;s a curated list of our favorite spots nearby.
           </p>
+          <div class="tg-stats">
+            <div><strong>20 min</strong><span>to downtown</span></div>
+            <div><strong>10 min</strong><span>to trails</span></div>
+            <div><strong>5 min</strong><span>to gas</span></div>
+            <div><strong>L2</strong><span>EV charger on-site</span></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="home-sec4">
+  <section class="tg-grid-section">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 mb-4">
-          <h4 style="color: #B40000; font-weight: 600;">Outdoors</h4>
-          <ul style="padding-left: 20px;">
-            <li>Blue Ridge Scenic Railway — vintage train ride along the Toccoa River</li>
-            <li>Mercier Orchards — pick-your-own apples, cider, and a great farm market</li>
-            <li>Toccoa River Swinging Bridge — short hike to one of the longest swinging bridges east of the Mississippi</li>
-            <li>Aska Adventure Area — mountain biking and hiking trails 10 minutes from the cabin</li>
-            <li>Lake Blue Ridge — kayaking, paddleboarding, and lakeside swimming</li>
-            <li>Long Creek Falls — easy waterfall hike off the Appalachian Trail</li>
-          </ul>
-        </div>
-        <div class="col-lg-6 col-md-6 mb-4">
-          <h4 style="color: #B40000; font-weight: 600;">Fishing</h4>
-          <ul style="padding-left: 20px;">
-            <li>The creek behind the cabin has minnows — fun for kids, not for keepers</li>
-            <li>McCaysville access point (20 min) is the closest top-rated trout fishing spot</li>
-            <li>You&rsquo;ll need both a Georgia fishing license and a trout stamp ($10 each)</li>
-            <li>Both are available through the Outdoors GA app (good for a full year)</li>
-          </ul>
-        </div>
-        <div class="col-lg-6 col-md-6 mb-4">
-          <h4 style="color: #B40000; font-weight: 600;">Food & Drink</h4>
-          <ul style="padding-left: 20px;">
-            <li>Harvest on Main — upscale farm-to-table in downtown Blue Ridge</li>
-            <li>The Boat Dock Restaurant — lakeside dining at Lake Blue Ridge</li>
-            <li>Black Sheep — laid-back gastropub favorite</li>
-            <li>Mercier Orchards Hard Cider Tasting Room</li>
-            <li>Grumpy Old Men Brewing — local craft beer</li>
-            <li>Serenberry Vineyards — small-batch winery 20 minutes out</li>
-          </ul>
-        </div>
-        <div class="col-lg-6 col-md-6 mb-4">
-          <h4 style="color: #B40000; font-weight: 600;">Shopping & Town</h4>
-          <ul style="padding-left: 20px;">
-            <li>Downtown Blue Ridge — boutique shops, art galleries, and weekend events</li>
-            <li>Out of the Blue Gallery — local art</li>
-            <li>Blue Ridge Olive Oil Company — tastings and pairings</li>
-            <li>The Cook&rsquo;s Cottage — kitchen goods and local foods</li>
-          </ul>
-        </div>
-        <div class="col-lg-6 col-md-6 mb-4">
-          <h4 style="color: #B40000; font-weight: 600;">Family-Friendly</h4>
-          <ul style="padding-left: 20px;">
-            <li>Old Toccoa Farm — golf and dining (Oscar from our reviews loved it!)</li>
-            <li>Tank Town USA — drive a real tank or excavator</li>
-            <li>Expedition: Bigfoot — the Sasquatch Museum (more fun than it sounds)</li>
-            <li>Mountain Adventure Ziplines</li>
-          </ul>
-        </div>
-        <div class="col-lg-6 col-md-6 mb-4">
-          <h4 style="color: #B40000; font-weight: 600;">Practical</h4>
-          <ul style="padding-left: 20px;">
-            <li>Closest grocery: Ingles in Blue Ridge (20 min)</li>
-            <li>Closest gas station: 5 minutes from the cabin</li>
-            <li>Free Level 2 EV charger on-site (ChargePoint, J1772 — Tesla adapter required)</li>
-            <li>Cell service: AT&amp;T and Verizon both work; T-Mobile spotty</li>
-          </ul>
-        </div>
+      <div class="tg-grid">
+        {
+          categories.map((c) => (
+            <article class="tg-card">
+              <div class="tg-card-head">
+                <div class="tg-icon">
+                  <i class={`fa-solid ${c.icon}`} />
+                </div>
+                <h3>{c.title}</h3>
+              </div>
+              <ul class="tg-list">
+                {c.items.map((item) => (
+                  <li>
+                    <i class="fa-solid fa-location-dot tg-pin" />
+                    <span set:html={item.replace(' — ', '<br><span class=\"tg-sub\">') + (item.includes(' — ') ? '</span>' : '')} />
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
       </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <p style="margin-top: 30px; font-style: italic;">
-            We update this guide based on guest feedback. If you discovered something great during
-            your stay, <a href="/contact-us/">let us know</a> and we&rsquo;ll add it.
-          </p>
-        </div>
+
+      <div class="tg-footnote">
+        <i class="fa-solid fa-comment-dots" />
+        <p>
+          We update this guide based on guest feedback. If you discovered something great during
+          your stay, <a href="/contact-us/">let us know</a> and we&rsquo;ll add it.
+        </p>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<style is:global>
+  .tg-hero {
+    padding: 80px 0 50px;
+    background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
+  }
+  .tg-lede {
+    max-width: 760px;
+    margin: 0 auto 32px;
+    color: #555;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .tg-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 30px;
+  }
+  .tg-stats > div {
+    background: #fff;
+    border: 1px solid #efefef;
+    border-radius: 12px;
+    padding: 16px 24px;
+    min-width: 130px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+  .tg-stats strong {
+    display: block;
+    color: #b40000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .tg-stats span {
+    color: #666;
+    font-size: 13px;
+  }
+
+  .tg-grid-section {
+    padding: 60px 0 100px;
+  }
+  .tg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  .tg-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 28px 28px 22px;
+    border: 1px solid #efefef;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .tg-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.09);
+  }
+  .tg-card-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .tg-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #b40000 0%, #8a0000 100%);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  .tg-card h3 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+  }
+  .tg-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .tg-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: #333;
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+  .tg-pin {
+    color: #b40000;
+    margin-top: 4px;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .tg-sub {
+    display: block;
+    color: #777;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  .tg-footnote {
+    margin-top: 50px;
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 14px;
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .tg-footnote i {
+    color: #b40000;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .tg-footnote p {
+    margin: 0;
+    color: #555;
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+  .tg-footnote a {
+    color: #b40000;
+    font-weight: 600;
+  }
+
+  @media (max-width: 576px) {
+    .tg-card { padding: 24px 22px 18px; }
+    .tg-footnote { flex-direction: column; align-items: flex-start; gap: 10px; }
+  }
+</style>

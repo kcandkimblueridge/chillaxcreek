@@ -618,12 +618,6 @@
 }
 
 @media screen and (max-width: 767px) {
-    header .off-sec {
-        top: 34px;
-    }
-    header .off-sec p {
-        width: 88px;
-    }
     h2 {
         font-size: 20px;
         margin: 0 0 4px;

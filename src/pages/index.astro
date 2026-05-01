@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import OwnerRezWidget from '../components/OwnerRezWidget.astro';
-import ContactForm from '../components/ContactForm.astro';
 import ReviewsSection from '../components/ReviewsSection.astro';
 import photos from '../photos.json';
 
@@ -301,28 +300,218 @@ const faqs = [
     </div>
   </section>
 
-  <section class="home-sec5">
+  <section class="home-contact">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-5">
-          <h2>Contact Us</h2>
-          <h6>Ask us anything or just say Hi!</h6>
-          <ul>
-            <li>
-              <span><img src="/images/phone.svg" alt="" /></span>
-              <a href="tel:+15045070558">+1 (504) 507-0558</a>
-            </li>
-            <li>
-              <span><img src="/images/email.svg" alt="" /></span>
-              <a href="mailto:hello@chillaxcreek.com">hello@chillaxcreek.com</a>
-            </li>
-          </ul>
+      <div class="home-contact-card">
+        <div class="home-contact-text">
+          <h6 class="red-heading">Get in touch</h6>
+          <h2>Have a question? Let&rsquo;s chat.</h2>
+          <p>
+            We&rsquo;re a real couple, not a property manager — drop us a line and you&rsquo;ll
+            hear back from Alton or Mary, usually within an hour during the day.
+          </p>
+          <div class="home-contact-actions">
+            <a href="/contact-us/" class="hc-btn hc-btn-primary">
+              <i class="fa-solid fa-paper-plane"></i> Send a message
+            </a>
+            <a href="/book-now/" class="hc-btn hc-btn-secondary">
+              Check availability
+            </a>
+          </div>
         </div>
-        <div class="col-lg-6 col-md-6 ms-auto">
-          <h3>Send message</h3>
-          <ContactForm />
+        <div class="home-contact-info">
+          <a href="tel:+15045070558" class="hc-method">
+            <span class="hc-icon"><i class="fa-solid fa-phone"></i></span>
+            <span class="hc-text">
+              <span class="hc-label">Call or text</span>
+              <span class="hc-value">+1 (504) 507-0558</span>
+            </span>
+          </a>
+          <a href="mailto:hello@shiftclick.io" class="hc-method">
+            <span class="hc-icon"><i class="fa-solid fa-envelope"></i></span>
+            <span class="hc-text">
+              <span class="hc-label">Email</span>
+              <span class="hc-value">hello@shiftclick.io</span>
+            </span>
+          </a>
+          <div class="hc-social">
+            <a
+              href="https://www.facebook.com/ChillaxCreek/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/chillax_creek/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <style is:global>
+    .home-contact {
+      padding: 80px 0 100px;
+      background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
+    }
+    .home-contact-card {
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid #efefef;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      overflow: hidden;
+    }
+    .home-contact-text {
+      padding: 48px 48px 44px;
+    }
+    .home-contact-text h2 {
+      margin: 6px 0 14px;
+      font-size: 32px;
+      line-height: 1.2;
+    }
+    .home-contact-text p {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0 0 28px;
+      max-width: 460px;
+    }
+    .home-contact-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .hc-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 24px;
+      border-radius: 999px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    .hc-btn-primary {
+      background: linear-gradient(135deg, #b40000 0%, #8a0000 100%);
+      color: #fff;
+    }
+    .hc-btn-primary:hover {
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(180, 0, 0, 0.25);
+    }
+    .hc-btn-secondary {
+      background: #f6f6f6;
+      color: #1a1a1a;
+      border: 1px solid #e8e8e8;
+    }
+    .hc-btn-secondary:hover {
+      background: #efefef;
+      color: #1a1a1a;
+      transform: translateY(-1px);
+    }
+
+    .home-contact-info {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      color: #fff;
+      padding: 40px 40px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      justify-content: center;
+    }
+    .hc-method {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: #fff;
+      transition: opacity 0.15s ease;
+    }
+    .hc-method:hover {
+      color: #fff;
+      opacity: 0.85;
+    }
+    .hc-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      background: rgba(180, 0, 0, 0.9);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+    .hc-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+    .hc-label {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .hc-value {
+      color: #fff;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .hc-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 8px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .hc-social a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .hc-social a:hover {
+      background: #b40000;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 991px) {
+      .home-contact-card {
+        grid-template-columns: 1fr;
+      }
+      .home-contact-text {
+        padding: 36px 30px 28px;
+      }
+      .home-contact-info {
+        padding: 32px 30px;
+      }
+    }
+    @media (max-width: 576px) {
+      .home-contact { padding: 60px 0 70px; }
+      .home-contact-text h2 { font-size: 26px; }
+    }
+  </style>
 </BaseLayout>

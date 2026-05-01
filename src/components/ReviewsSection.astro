@@ -1,11 +1,17 @@
 ---
 import reviewsData from '../reviews.json';
 
-const reviews = Array.isArray(reviewsData) ? reviewsData : reviewsData.reviews ?? [];
+const allReviews = Array.isArray(reviewsData) ? reviewsData : reviewsData.reviews ?? [];
+const aggregate = (reviewsData as any).aggregate ?? null;
 
-// Aggregate rating + count (manual — Airbnb's number when scraped was 4.97 / 25)
-const RATING = 4.97;
-const REVIEW_COUNT = 25;
+// Sort by date descending so the latest stays on top
+const reviews = [...allReviews].sort((a: any, b: any) =>
+  String(b.date).localeCompare(String(a.date))
+);
+
+// Pull aggregate from scraper output; fall back if scraper hasn't run.
+const RATING = aggregate?.rating ?? 4.97;
+const REVIEW_COUNT = aggregate?.count ?? reviews.length;
 
 function formatDate(s: string) {
   // Airbnb dates are "YYYY-MM-DD" — render as "Month YYYY"
@@ -29,20 +35,20 @@ function formatDate(s: string) {
         <div class="rating-summary">
           <span class="stars">★★★★★</span>
           <span class="rating-value">{RATING}</span>
-          <span class="rating-meta">based on {REVIEW_COUNT}+ Airbnb reviews</span>
+          <span class="rating-meta">based on {REVIEW_COUNT} guest reviews</span>
         </div>
       </div>
     </div>
     <div class="row review-grid">
       {
-        reviews.slice(0, 9).map((r: any) => (
+        reviews.slice(0, 3).map((r: any) => (
           <div class="col-lg-4 col-md-6 mb-4">
             <article class="review-card">
               <div class="review-stars">★★★★★</div>
               <p class="review-text">&ldquo;{r.text}&rdquo;</p>
               <div class="review-meta">
                 <strong>{r.name}</strong>
-                <span>{formatDate(r.date)} · Airbnb</span>
+                <span>{formatDate(r.date)} · {r.source ?? 'Airbnb'}</span>
               </div>
             </article>
           </div>
