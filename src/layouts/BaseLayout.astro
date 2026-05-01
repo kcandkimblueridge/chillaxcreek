@@ -46,16 +46,65 @@ const {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" is:inline></script>
     <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js" is:inline></script>
     <script is:inline>
-      // FAQ accordion (preserves original UX)
+      // Mobile nav drawer toggle
+      document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector('.header-hamburger');
+        const drawer = document.getElementById('mobile-drawer');
+        if (hamburger && drawer) {
+          const setOpen = (open) => {
+            drawer.classList.toggle('open', open);
+            hamburger.classList.toggle('open', open);
+            hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            document.body.classList.toggle('drawer-open', open);
+          };
+          hamburger.addEventListener('click', () => {
+            setOpen(!drawer.classList.contains('open'));
+          });
+          drawer.querySelectorAll('a').forEach((a) => {
+            a.addEventListener('click', () => setOpen(false));
+          });
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && drawer.classList.contains('open')) setOpen(false);
+          });
+          document.addEventListener('click', (e) => {
+            if (!drawer.classList.contains('open')) return;
+            const t = e.target;
+            if (drawer.contains(t) || hamburger.contains(t)) return;
+            setOpen(false);
+          });
+        }
+      });
+
+      // FAQ accordion with smooth height animation
       document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.accordian > li > h5').forEach((h) => {
-          h.addEventListener('click', () => {
-            const li = h.parentElement;
-            li.classList.toggle('active');
-            const content = li.querySelector('.content');
-            if (content) {
-              content.style.display = content.style.display === 'block' ? 'none' : 'block';
+          const li = h.parentElement;
+          const content = li.querySelector('.content');
+          h.setAttribute('role', 'button');
+          h.setAttribute('tabindex', '0');
+          h.setAttribute('aria-expanded', 'false');
+          const toggle = () => {
+            const isOpen = li.classList.toggle('active');
+            h.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            if (!content) return;
+            if (isOpen) {
+              content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+              content.style.maxHeight = '0px';
             }
+          };
+          h.addEventListener('click', toggle);
+          h.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              toggle();
+            }
+          });
+        });
+        // Recalculate open panel heights on window resize
+        window.addEventListener('resize', () => {
+          document.querySelectorAll('.accordian > li.active > .content').forEach((c) => {
+            c.style.maxHeight = c.scrollHeight + 'px';
           });
         });
 

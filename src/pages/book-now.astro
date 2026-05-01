@@ -158,53 +158,64 @@ const steps = [
 
 <style is:global>
   .bn-hero {
-    padding: 140px 0 50px;
-    background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
+    padding: 140px 0 60px;
+    background: linear-gradient(180deg, var(--cc-bg-soft) 0%, #fff 100%);
     text-align: center;
+  }
+  .bn-hero h2 {
+    font-size: 38px;
+    line-height: 1.15;
+    margin-bottom: 14px;
   }
   .bn-lede {
     max-width: 720px;
     margin: 0 auto 28px;
-    color: #555;
+    color: var(--cc-muted);
     font-size: 17px;
-    line-height: 1.6;
+    line-height: 1.65;
   }
   .bn-stats {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 16px;
-    margin-top: 24px;
+    gap: 14px;
+    margin-top: 32px;
   }
   .bn-stats > div {
     background: #fff;
-    border: 1px solid #efefef;
-    border-radius: 12px;
+    border: 1px solid var(--cc-border);
+    border-radius: var(--cc-radius-md);
     padding: 16px 24px;
     min-width: 140px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--cc-shadow-card);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .bn-stats > div:hover {
+    transform: translateY(-2px);
+    border-color: var(--cc-border-strong);
+    box-shadow: var(--cc-shadow-card-hover);
   }
   .bn-stats strong {
     display: block;
-    color: #b40000;
+    color: var(--cc-red);
     font-family: 'Poppins', sans-serif;
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 4px;
   }
   .bn-stats span {
-    color: #666;
+    color: var(--cc-muted);
     font-size: 13px;
   }
 
   .bn-widget-section {
-    padding: 50px 0 80px;
+    padding: 60px 0 80px;
   }
   .bn-widget-card {
     background: #fff;
-    border-radius: 22px;
-    border: 1px solid #efefef;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    border-radius: var(--cc-radius-xl);
+    border: 1px solid var(--cc-border);
+    box-shadow: var(--cc-shadow-card-hover);
     overflow: hidden;
   }
   .bn-widget-head {
@@ -216,12 +227,12 @@ const steps = [
     font-family: 'Poppins', sans-serif;
     font-size: 26px;
     font-weight: 600;
-    color: #111;
+    color: var(--cc-text);
   }
   .bn-widget-head p {
-    color: #555;
+    color: var(--cc-muted);
     font-size: 15px;
-    line-height: 1.55;
+    line-height: 1.6;
     max-width: 520px;
     margin: 0 auto;
   }
@@ -231,7 +242,7 @@ const steps = [
 
   .bn-benefits {
     padding: 80px 0;
-    background: #fafafa;
+    background: var(--cc-bg-soft);
   }
   .bn-benefit-grid {
     display: grid;
@@ -241,38 +252,39 @@ const steps = [
   }
   .bn-benefit-card {
     background: #fff;
-    border-radius: 16px;
+    border-radius: var(--cc-radius-lg);
     padding: 28px 24px;
-    border: 1px solid #efefef;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--cc-border);
+    box-shadow: var(--cc-shadow-card);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   }
   .bn-benefit-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    border-color: var(--cc-border-strong);
+    box-shadow: var(--cc-shadow-card-hover);
   }
   .bn-benefit-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #b40000 0%, #8a0000 100%);
-    color: #fff;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--cc-radius-md);
+    background: rgba(180, 0, 0, 0.08);
+    color: var(--cc-red);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 20px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
   .bn-benefit-card h4 {
     margin: 0 0 8px;
     font-family: 'Poppins', sans-serif;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 600;
-    color: #111;
+    color: var(--cc-text);
   }
   .bn-benefit-card p {
     margin: 0;
-    color: #555;
+    color: var(--cc-muted);
     font-size: 14px;
     line-height: 1.55;
   }
@@ -293,9 +305,9 @@ const steps = [
   .bn-step-num {
     width: 48px;
     height: 48px;
-    margin: 0 auto 16px;
+    margin: 0 auto 18px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #b40000 0%, #8a0000 100%);
+    background: var(--cc-gradient-red);
     color: #fff;
     display: inline-flex;
     align-items: center;
@@ -303,51 +315,59 @@ const steps = [
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 18px;
+    box-shadow: var(--cc-shadow-btn-red);
   }
   .bn-step h4 {
     margin: 0 0 8px;
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     font-weight: 600;
-    color: #111;
+    color: var(--cc-text);
   }
   .bn-step p {
     margin: 0;
-    color: #555;
+    color: var(--cc-muted);
     font-size: 14.5px;
-    line-height: 1.55;
+    line-height: 1.6;
   }
 
   .bn-help {
     padding: 0 0 100px;
   }
   .bn-help-card {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-    border-radius: 22px;
-    padding: 44px 48px;
+    position: relative;
+    background:
+      radial-gradient(circle at top right, rgba(180, 0, 0, 0.22) 0%, transparent 55%),
+      linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border-radius: var(--cc-radius-xl);
+    padding: 48px 48px;
     color: #fff;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 28px;
+    overflow: hidden;
   }
   .bn-help-text {
     flex: 1;
     min-width: 280px;
+    position: relative;
+    z-index: 1;
   }
+  .bn-help-actions { position: relative; z-index: 1; }
   .bn-help-card h3 {
     color: #fff;
     margin: 4px 0 10px;
     font-family: 'Poppins', sans-serif;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 600;
   }
   .bn-help-card p {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.78);
     margin: 0;
     font-size: 15px;
-    line-height: 1.55;
+    line-height: 1.6;
     max-width: 540px;
   }
   .bn-help-actions {
@@ -360,7 +380,7 @@ const steps = [
     align-items: center;
     gap: 8px;
     padding: 13px 24px;
-    border-radius: 999px;
+    border-radius: var(--cc-radius-pill);
     font-family: 'Poppins', sans-serif;
     font-size: 14.5px;
     font-weight: 600;
@@ -368,18 +388,19 @@ const steps = [
     transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   }
   .bn-btn-primary {
-    background: linear-gradient(135deg, #b40000 0%, #8a0000 100%);
+    background: var(--cc-gradient-red);
     color: #fff;
+    box-shadow: var(--cc-shadow-btn-red);
   }
   .bn-btn-primary:hover {
     color: #fff;
     transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(180, 0, 0, 0.3);
+    box-shadow: var(--cc-shadow-btn-red-hover);
   }
   .bn-btn-secondary {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.22);
   }
   .bn-btn-secondary:hover {
     background: rgba(255, 255, 255, 0.18);
@@ -388,9 +409,11 @@ const steps = [
   }
 
   @media (max-width: 767px) {
-    .bn-hero { padding: 120px 0 40px; }
+    .bn-hero { padding: 110px 0 40px; }
+    .bn-hero h2 { font-size: 28px; }
     .bn-widget-head { padding: 28px 22px 8px; }
     .bn-widget-body { padding: 18px 18px 28px; }
     .bn-help-card { padding: 32px 24px; }
+    .bn-help-card h3 { font-size: 22px; }
   }
 </style>

@@ -17,45 +17,52 @@ const heroSlides = [
 
 const amenities = [
   {
-    icon: '/images/cabin_icon4.png',
+    icon: 'fa-water',
     title: 'PRIVATE CREEK',
     text: 'Sip your coffee and wake up to the whisper of the backyard creek.',
   },
   {
-    icon: '/images/cabin_icon1.png',
+    icon: 'fa-hot-tub-person',
     title: 'HOT TUB',
     text: 'Relaxation is in your future! This spa seats up to 4–6 guests. Professionally drained and cleaned after every guest.',
   },
   {
-    icon: '/images/cabin_icon5.png',
+    icon: 'fa-table-tennis-paddle-ball',
     title: 'GAME ROOM',
     text: "Prefer to stay in? The 3-in-1 table has ping-pong, air hockey, and billiards. Can't forget the classics like Jenga, Uno cards, monopoly, puzzles, & more!",
   },
   {
-    icon: '/images/cabin_icon8.png',
+    icon: 'fa-fire',
     title: "FIREPLACE + S'MORES",
     text: '2 indoor fireplaces, 1 fire pit and 1 patio fireplace (great for rainy days). Firewood included!',
   },
   {
-    icon: '/images/cabin_icon3.png',
+    icon: 'fa-mug-hot',
     title: 'COFFEE BAR',
     text: 'Keurig and regular coffee machine. Included is Starbucks k-cups, sugar packets, mini coffee mate creamers, and to-go cups.',
   },
   {
-    icon: '/images/cabin_icon7.png',
+    icon: 'fa-charging-station',
     title: 'EV CHARGER',
     text: 'Free ChargePoint on-site.',
   },
   {
-    icon: '/images/cabin_icon2.png',
+    icon: 'fa-paw',
     title: 'PET FRIENDLY',
     text: "Bring your furry friend along! It's a home away from home for the whole family.",
   },
   {
-    icon: '/images/cabin_icon6.png',
+    icon: 'fa-utensils',
     title: 'FULL KITCHEN',
     text: 'Fully stocked with pots, pans, utensils, crock pot, mixing bowls, dishwasher/laundry detergent, etc. All you need is groceries or order take out.',
   },
+];
+
+const bookDirectBenefits = [
+  { icon: 'fa-tag', title: 'No Booking Fees', text: 'Book now, no fees, save money.' },
+  { icon: 'fa-percent', title: 'Best Rates Guarantee', text: 'Price-match guarantee: securing the best rates.' },
+  { icon: 'fa-comments', title: 'Direct Booking', text: 'Communicate with us! Quick response time.' },
+  { icon: 'fa-envelope-open-text', title: 'Subscribe for Discount', text: 'Discounts await! Subscribe now.' },
 ];
 
 // Featured photos for the lower swiper carousel
@@ -176,35 +183,32 @@ const faqs = [
     </div>
   </section>
 
-  <section class="home-sec2">
+  <section class="home-comforts">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12 port">
-          <h3>Cabin Comforts</h3>
-          <h2>Cabin Comforts</h2>
-          <h6 class="red-heading">Top Amenities at Chillax Creek</h6>
-        </div>
+      <div class="section-head">
+        <h6 class="red-heading">Top Amenities at Chillax Creek</h6>
+        <h2>Cabin Comforts</h2>
+        <p class="section-lede">
+          Everything you need for a relaxing escape — thoughtfully stocked and creek-side ready.
+        </p>
       </div>
-    </div>
-    <div class="black_bg">
-      <div class="container">
-        <div class="row justify-content-center">
-          {
-            amenities.map((a) => (
-              <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="cab_wrp">
-                  <div class="cab_icon">
-                    <img src={a.icon} alt={a.title} />
-                  </div>
-                  <h4>{a.title}</h4>
-                  <p>{a.text}</p>
-                </div>
+      <div class="comfort-grid">
+        {
+          amenities.map((a) => (
+            <div class="comfort-card">
+              <div class="comfort-icon">
+                <i class={`fa-solid ${a.icon}`} aria-hidden="true" />
               </div>
-            ))
-          }
-        </div>
+              <h4>{a.title}</h4>
+              <p>{a.text}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
+  </section>
+
+  <section class="home-features">
     <div class="container">
       <div class="group_slide">
         <div class="swiper-container">
@@ -223,54 +227,39 @@ const faqs = [
           <div class="swiper-button-prev">&lt;</div>
         </div>
       </div>
-      <div class="row row-rt">
-        <h3>Book Directly</h3>
-        <div class="col-lg-6 col-md-6 df-aic">
-          <h2>Book Directly</h2>
+    </div>
+  </section>
+
+  <section class="home-book-direct">
+    <div class="container">
+      <div class="bd-grid">
+        <div class="bd-text">
           <h6 class="red-heading">Save Money, Same Great Quality</h6>
+          <h2>Book Directly</h2>
           <p>
-            Our guests can enjoy the added convenience of booking a stay at the lowest rate
-            available online. Booking direct through our website will guarantee you&rsquo;re getting
-            the best value.
+            Booking direct through our website guarantees the lowest rate available online —
+            no third-party fees, no markups, no surprises at checkout.
           </p>
           <p>
-            &ldquo;Unlock exclusive savings by booking directly with us! Enjoy unbeatable discounts
-            and special perks that you won&rsquo;t find elsewhere. Don&rsquo;t miss out on the
-            chance to save big on your next stay!&rdquo;
+            Unlock exclusive savings, faster replies, and the kind of perks you just won&rsquo;t
+            find on the big platforms.
           </p>
-          <a href="/book-now/" class="main-btn">Book Now</a>
+          <a href="/book-now/" class="main-btn">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Book Now
+          </a>
         </div>
-        <div class="col-lg-3 col-md-3 col-6">
-          <div class="cart">
-            <div class="wraper">
-              <span><span><img src="/images/i1.svg" alt="" /></span></span>
-              <h4>No Booking Fees</h4>
-            </div>
-            <p>Book now, no fees, save money.</p>
-          </div>
-          <div class="cart">
-            <div class="wraper">
-              <span><span><img src="/images/i2.svg" alt="" /></span></span>
-              <h4>Best Rates Guarantee</h4>
-            </div>
-            <p>Price-match guarantee: securing the best rates.</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-6 pt80">
-          <div class="cart">
-            <div class="wraper">
-              <span><span><img src="/images/i3.svg" alt="" /></span></span>
-              <h4>Direct Booking</h4>
-            </div>
-            <p>Communicate with us! Quick response time.</p>
-          </div>
-          <div class="cart">
-            <div class="wraper">
-              <span><span><img src="/images/i4.svg" alt="" /></span></span>
-              <h4>Subscribe for Discount</h4>
-            </div>
-            <p>Discounts Await! Subscribe Now.</p>
-          </div>
+        <div class="bd-cards">
+          {
+            bookDirectBenefits.map((b) => (
+              <div class="bd-card">
+                <div class="bd-icon">
+                  <i class={`fa-solid ${b.icon}`} aria-hidden="true" />
+                </div>
+                <h4>{b.title}</h4>
+                <p>{b.text}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </div>
@@ -368,7 +357,7 @@ const faqs = [
   <style is:global>
     .home-contact {
       padding: 80px 0 100px;
-      background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
+      background: linear-gradient(180deg, var(--cc-bg-soft) 0%, #fff 100%);
     }
     .home-contact-card {
       background: #fff;

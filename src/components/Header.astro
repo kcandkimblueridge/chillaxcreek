@@ -10,10 +10,10 @@ const isActive = (path: string) => {
 <header>
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-lg-2 col-md-4 col-4">
-        <a href="/"><img src="/images/logo.svg" alt="Chillax Creek" /></a>
+      <div class="col-lg-2 col-md-4 col-6">
+        <a href="/" class="header-logo"><img src="/images/logo.svg" alt="Chillax Creek" /></a>
       </div>
-      <div class="col-lg-8 col-md-1 col-2">
+      <div class="col-lg-7 col-md-1 header-nav-col">
         <div id="navigation">
           <nav>
             <ul>
@@ -33,13 +33,40 @@ const isActive = (path: string) => {
           </nav>
         </div>
       </div>
-      <div class="col-lg-2 col-md-7 col-6 text-end btn-sec">
-        <a href="/book-now/" class="main-btn">Book Now</a>
+      <div class="col-lg-3 col-md-7 col-6 text-end btn-sec">
         <a href="/book-now/" class="discount-badge" aria-label="Save 20% over Airbnb rates by booking direct">
           <span class="discount-badge-tag">Save 20%</span>
           <span class="discount-badge-sub">vs. <i class="fa-brands fa-airbnb" aria-hidden="true"></i> Airbnb</span>
         </a>
+        <a href="/book-now/" class="main-btn header-book-btn">
+          <i class="fa-solid fa-calendar-check" aria-hidden="true"></i> <span class="hb-label">Book Now</span>
+        </a>
+        <button
+          type="button"
+          class="header-hamburger"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-drawer"
+        >
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
+  </div>
+  <div class="mobile-drawer" id="mobile-drawer">
+    <ul>
+      <li class:list={[{ 'current-menu-item': isActive('/') }]}>
+        <a href="/">Home</a>
+      </li>
+      <li class:list={[{ 'current-menu-item': isActive('/view-cabin') }]}>
+        <a href="/view-cabin/">View Cabin</a>
+      </li>
+      <li class:list={[{ 'current-menu-item': isActive('/travel-guide') }]}>
+        <a href="/travel-guide/">Travel Guide</a>
+      </li>
+      <li class:list={[{ 'current-menu-item': isActive('/contact-us') }]}>
+        <a href="/contact-us/">Contact Us</a>
+      </li>
+    </ul>
   </div>
 </header>
