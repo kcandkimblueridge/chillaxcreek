@@ -1,0 +1,19 @@
+---
+// Formspree endpoint for the newsletter signup.
+// Replace FORMSPREE_NEWSLETTER_ID with the form ID from your Formspree dashboard.
+const FORMSPREE_NEWSLETTER = 'https://formspree.io/f/FORMSPREE_NEWSLETTER_ID';
+---
+
+<form action={FORMSPREE_NEWSLETTER} method="POST">
+  <div class="form-wraper">
+    <input
+      type="email"
+      name="email"
+      placeholder="Enter Your Email"
+      required
+      aria-label="Email address"
+    />
+    <input type="hidden" name="_subject" value="New Chillax Creek newsletter signup" />
+    <input type="submit" value="Subscribe" />
+  </div>
+</form>

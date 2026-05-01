@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<BaseLayout
+  title="Contact Us | Chillax Creek"
+  description="Get in touch with Alton & Mary about Chillax Creek cabin in Blue Ridge, Georgia. Phone, email, or contact form."
+>
+  <section class="home-sec5" style="padding-top: 60px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-5">
+          <h2>Contact Us</h2>
+          <h6>Ask us anything or just say Hi!</h6>
+          <ul>
+            <li>
+              <span><img src="/images/phone.svg" alt="" /></span>
+              <a href="tel:+15045070558">+1 (504) 507-0558</a>
+            </li>
+            <li>
+              <span><img src="/images/email.svg" alt="" /></span>
+              <a href="mailto:hello@chillaxcreek.com">hello@chillaxcreek.com</a>
+            </li>
+          </ul>
+
+          <div style="margin-top: 30px;">
+            <h6 class="red-heading">Hosts</h6>
+            <p>Alton &amp; Mary</p>
+          </div>
+
+          <div style="margin-top: 30px;">
+            <h6 class="red-heading">Find us on social</h6>
+            <ul class="s-media" style="display: flex; gap: 12px; padding: 0;">
+              <li>
+                <a href="https://www.facebook.com/ChillaxCreek/" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/chillax_creek/" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 ms-auto">
+          <h3>Send message</h3>
+          <ContactForm />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

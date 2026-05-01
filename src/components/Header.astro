@@ -1,0 +1,45 @@
+---
+const pathname = Astro.url.pathname;
+const isActive = (path: string) => {
+  if (path === '/' && pathname === '/') return true;
+  if (path !== '/' && pathname.startsWith(path)) return true;
+  return false;
+};
+---
+
+<header>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-2 col-md-4 col-4">
+        <a href="/"><img src="/images/logo.svg" alt="Chillax Creek" /></a>
+      </div>
+      <div class="col-lg-8 col-md-1 col-2">
+        <div id="navigation">
+          <nav>
+            <ul>
+              <li class:list={['menu-item', { 'current-menu-item': isActive('/') }]}>
+                <a href="/" aria-current={isActive('/') ? 'page' : undefined}>Home</a>
+              </li>
+              <li class:list={['menu-item', { 'current-menu-item': isActive('/view-cabin') }]}>
+                <a href="/view-cabin/">View Cabin</a>
+              </li>
+              <li class:list={['menu-item', { 'current-menu-item': isActive('/travel-guide') }]}>
+                <a href="/travel-guide/">Travel Guide</a>
+              </li>
+              <li class:list={['menu-item', { 'current-menu-item': isActive('/contact-us') }]}>
+                <a href="/contact-us/">Contact Us</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-7 col-6 text-end btn-sec">
+        <a href="/book-now/" class="main-btn">Book Now</a>
+        <div class="off-sec">
+          <img src="/images/i5.svg" alt="" />
+          <p>20% off <span>airbnb <br /> rates</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

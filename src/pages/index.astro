@@ -1,0 +1,381 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import OwnerRezWidget from '../components/OwnerRezWidget.astro';
+import ContactForm from '../components/ContactForm.astro';
+import photos from '../photos.json';
+
+const heroSlides = [
+  [
+    { src: photos[31].src, label: 'Welcome to Chillax Creek' },
+    { src: photos[37].src, label: 'Loft (2 full beds)' },
+  ],
+  [
+    { src: photos[15].src, label: 'Private Creek' },
+    { src: photos[33].src, label: 'Tranquil Sanctuary' },
+  ],
+  [
+    { src: photos[3].src, label: 'Kitchen' },
+    { src: photos[6].src, label: 'King En-suite' },
+  ],
+];
+
+const amenities = [
+  {
+    icon: '/images/cabin_icon4.png',
+    title: 'PRIVATE CREEK',
+    text: 'Sip your coffee and wake up to the whisper of the backyard creek.',
+  },
+  {
+    icon: '/images/cabin_icon1.png',
+    title: 'HOT TUB',
+    text: 'Relaxation is in your future! This spa seats up to 4–6 guests. Professionally drained and cleaned after every guest.',
+  },
+  {
+    icon: '/images/cabin_icon5.png',
+    title: 'GAME ROOM',
+    text: "Prefer to stay in? The 3-in-1 table has ping-pong, air hockey, and billiards. Can't forget the classics like Jenga, Uno cards, monopoly, puzzles, & more!",
+  },
+  {
+    icon: '/images/cabin_icon8.png',
+    title: "FIREPLACE + S'MORES",
+    text: '2 indoor fireplaces, 1 fire pit and 1 patio fireplace (great for rainy days). Firewood included!',
+  },
+  {
+    icon: '/images/cabin_icon3.png',
+    title: 'COFFEE BAR',
+    text: 'Keurig and regular coffee machine. Included is Starbucks k-cups, sugar packets, mini coffee mate creamers, and to-go cups.',
+  },
+  {
+    icon: '/images/cabin_icon7.png',
+    title: 'EV CHARGER',
+    text: 'Free ChargePoint on-site.',
+  },
+  {
+    icon: '/images/cabin_icon2.png',
+    title: 'PET FRIENDLY',
+    text: "Bring your furry friend along! It's a home away from home for the whole family.",
+  },
+  {
+    icon: '/images/cabin_icon6.png',
+    title: 'FULL KITCHEN',
+    text: 'Fully stocked with pots, pans, utensils, crock pot, mixing bowls, dishwasher/laundry detergent, etc. All you need is groceries or order take out.',
+  },
+];
+
+// Featured photos for the lower swiper carousel
+const featurePhotos = [
+  { idx: 15, label: 'Backyard Creek' },
+  { idx: 20, label: 'Dog Friendly' },
+  { idx: 34, label: 'Hot Tub' },
+  { idx: 36, label: 'Game Room' },
+  { idx: 2, label: 'Coffee Bar' },
+  { idx: 35, label: 'Game Room' },
+  { idx: 19, label: 'Cornhole' },
+  { idx: 22, label: 'Outdoor Fireplace' },
+  { idx: 39, label: "S'mores Bar" },
+  { idx: 17, label: 'Fire Pit' },
+  { idx: 40, label: 'Hot Tub Vibes' },
+  { idx: 29, label: 'EV Charger' },
+  { idx: 0, label: 'Living Room' },
+  { idx: 28, label: 'Driveway' },
+  { idx: 43, label: 'Holiday Decor' },
+];
+
+const faqs = [
+  {
+    q: 'Do you allow pets?',
+    a: 'Yes! Dogs are allowed at Chillax as long as they are potty trained.\n- Keep an eye on your pet to prevent accidents or damage to property.\n- Dispose of waste appropriately and clean up outdoors.',
+  },
+  {
+    q: 'What are the benefits of booking through your site?',
+    a: 'Booking directly through our site ensures you get the best rates, exclusive offers, and quick response time from the owner.',
+  },
+  {
+    q: 'How far away from downtown Blue Ridge?',
+    a: 'Chillax is conveniently located just 20 minutes from downtown Blue Ridge. Activities, groceries, and essentials are all close by.',
+  },
+  {
+    q: 'What kind of parking is available for vehicle(s)?',
+    a: 'We offer free on-site parking with ample space for multiple vehicles, plus a free Level 2 ChargePoint EV charger.',
+  },
+  {
+    q: 'Can we fish in the creek?',
+    a: 'While our creek mostly has minnows, the best fishing spot is just 20 minutes away at the McCaysville access point. McCaysville ranks #7 among top fishing locations, but there are plenty of other options to explore.',
+  },
+  {
+    q: 'Do I need a fishing license?',
+    a: "Yes, you'll need both a fishing license and a trout stamp to fish in most Georgia waters, including catch and release. Both are easily available for $10 each via the Outdoors GA app and are valid for a full year.",
+  },
+];
+---
+
+<BaseLayout>
+  <section class="home-banner">
+    <img src="/images/home-banner.jpg" alt="" class="main-img" />
+    <img src="/images/banner-abs.png" alt="" class="img-abs" />
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-md-12 mx-auto">
+            <h1>Unpack &amp; Chillax!</h1>
+            <div class="choosebar">
+              <OwnerRezWidget />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-sec1">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6">
+          <h2>Escape to Tranquility in the Heart of Georgia&rsquo;s Mountains.</h2>
+          <h6 class="red-heading">Your Blue Ridge haven</h6>
+          <p>
+            Introducing Chillax Creek, your premium vacation rental destination nestled in the heart
+            of Blue Ridge, Georgia. Our cozy cabin accommodates up to 8 guests comfortably with its
+            3 bedrooms, offering 5 beds for a restful night&rsquo;s sleep, and 3 baths for added
+            convenience. Immerse yourself in the tranquility of nature as you relax by the babbling
+            creek.
+          </p>
+          <p>
+            At Chillax Creek, we strive to provide a memorable retreat where you can unwind,
+            recharge, and create cherished memories with loved ones.
+          </p>
+          <a href="/view-cabin/" class="main-btn">View Cabin</a>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <div class="swiper mySwiper hs1-slider">
+            <div class="swiper-wrapper">
+              {
+                heroSlides.map((slide) => (
+                  <div class="swiper-slide">
+                    {slide.map((s) => (
+                      <div class="content">
+                        <img src={s.src} alt={s.label} />
+                        <h5>{s.label}</h5>
+                      </div>
+                    ))}
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-sec2">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 port">
+          <h3>Cabin Comforts</h3>
+          <h2>Cabin Comforts</h2>
+          <h6 class="red-heading">Top Amenities at Chillax Creek</h6>
+        </div>
+      </div>
+    </div>
+    <div class="black_bg">
+      <div class="container">
+        <div class="row justify-content-center">
+          {
+            amenities.map((a) => (
+              <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="cab_wrp">
+                  <div class="cab_icon">
+                    <img src={a.icon} alt={a.title} />
+                  </div>
+                  <h4>{a.title}</h4>
+                  <p>{a.text}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="group_slide">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            {
+              featurePhotos.map((f) => (
+                <div class="swiper-slide">
+                  <img src={photos[f.idx].src} alt={f.label} />
+                  <h5>{f.label}</h5>
+                </div>
+              ))
+            }
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next">&gt;</div>
+          <div class="swiper-button-prev">&lt;</div>
+        </div>
+      </div>
+      <div class="row row-rt">
+        <h3>Book Directly</h3>
+        <div class="col-lg-6 col-md-6 df-aic">
+          <h2>Book Directly</h2>
+          <h6 class="red-heading">Save Money, Same Great Quality</h6>
+          <p>
+            Our guests can enjoy the added convenience of booking a stay at the lowest rate
+            available online. Booking direct through our website will guarantee you&rsquo;re getting
+            the best value.
+          </p>
+          <p>
+            &ldquo;Unlock exclusive savings by booking directly with us! Enjoy unbeatable discounts
+            and special perks that you won&rsquo;t find elsewhere. Don&rsquo;t miss out on the
+            chance to save big on your next stay!&rdquo;
+          </p>
+          <a href="/book-now/" class="main-btn">Book Now</a>
+        </div>
+        <div class="col-lg-3 col-md-3 col-6">
+          <div class="cart">
+            <div class="wraper">
+              <span><span><img src="/images/i1.svg" alt="" /></span></span>
+              <h4>No Booking Fees</h4>
+            </div>
+            <p>Book now, no fees, save money.</p>
+          </div>
+          <div class="cart">
+            <div class="wraper">
+              <span><span><img src="/images/i2.svg" alt="" /></span></span>
+              <h4>Best Rates Guarantee</h4>
+            </div>
+            <p>Price-match guarantee: securing the best rates.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-6 pt80">
+          <div class="cart">
+            <div class="wraper">
+              <span><span><img src="/images/i3.svg" alt="" /></span></span>
+              <h4>Direct Booking</h4>
+            </div>
+            <p>Communicate with us! Quick response time.</p>
+          </div>
+          <div class="cart">
+            <div class="wraper">
+              <span><span><img src="/images/i4.svg" alt="" /></span></span>
+              <h4>Subscribe for Discount</h4>
+            </div>
+            <p>Discounts Await! Subscribe Now.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-sec3">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Guest Reviews</h2>
+          <h6 class="red-heading">★ 4.97 across 25+ Airbnb reviews</h6>
+
+          <ul class="nav nav-pills mb-3" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" type="button">
+                <img src="/images/i5.svg" alt="" /> Airbnb
+              </button>
+            </li>
+          </ul>
+
+          <div class="content-wrap">
+            <div class="review-box">
+              <h5>Josephine</h5>
+              <h6>August 2024</h6>
+              <p>
+                Our family of five had an incredible stay at the Chillax Cabin. The thoughtfulness
+                that went into creating an awesome experience was evident from the moment we
+                arrived. The cabin itself is beautiful, with a well-maintained interior that made us
+                feel right at home. The hosts were very responsive and ensured that the cabin was
+                well-stocked with everything we needed for our stay. We highly recommend staying at
+                this property for anyone looking for a perfect getaway.
+              </p>
+            </div>
+            <div class="review-box color-box">
+              <h5>Kayla</h5>
+              <h6>July 2024</h6>
+              <p>
+                I would give this 10 stars if I could! Unpack and Chillax was the most amazing
+                Airbnb my family and I have ever stayed at! The pictures do not do it justice! It
+                is even more beautiful and accommodating than it looks in the photos. Every single
+                detail was carefully thought about. You literally only need groceries and your bug
+                spray. The cabin is fully equipped with everything to cook with, all the games,
+                cozy atmosphere and thoughtful things like a smores bar.
+              </p>
+            </div>
+            <div class="review-box">
+              <h5>Meredith</h5>
+              <h6>July 2024</h6>
+              <p>
+                We visit many Airbnbs around the world and this was definitely one of the best! It
+                is clean, perfect location, private lot, wonderful amenities, lovely hosts, and they
+                allow dogs AND have EV charging! Literally could not be better if they tried! We
+                drove away at check out and were already planning our next getaway there!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-sec4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6">
+          <h2>Frequently Asked Questions</h2>
+          <h6 class="red-heading">Popular Questions</h6>
+          <p>
+            Answers to our most commonly asked questions can be found below. For any questions not
+            answered below, please reach out to us via our contact page, phone, or email. We strive
+            to answer questions as quickly as possible.
+          </p>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <ul class="accordian">
+            {
+              faqs.map((f) => (
+                <li>
+                  <h5>{f.q}</h5>
+                  <div class="content">
+                    <p>{f.a}</p>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-sec5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-5">
+          <h2>Contact Us</h2>
+          <h6>Ask us anything or just say Hi!</h6>
+          <ul>
+            <li>
+              <span><img src="/images/phone.svg" alt="" /></span>
+              <a href="tel:+15045070558">+1 (504) 507-0558</a>
+            </li>
+            <li>
+              <span><img src="/images/email.svg" alt="" /></span>
+              <a href="mailto:hello@chillaxcreek.com">hello@chillaxcreek.com</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-6 col-md-6 ms-auto">
+          <h3>Send message</h3>
+          <ContactForm />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

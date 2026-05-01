@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import OwnerRezWidget from '../components/OwnerRezWidget.astro';
+---
+
+<BaseLayout
+  title="Book Now | Chillax Creek"
+  description="Check availability and book your stay at Chillax Creek directly. Save 20% over Airbnb rates."
+>
+  <section class="home-sec1" style="padding-top: 60px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h6 class="red-heading">Save 20% over Airbnb rates</h6>
+          <h2>Book Your Stay</h2>
+          <p>
+            Use the calendar below to check availability and complete your booking directly with
+            us. No third-party fees, fastest response time, and the best rates online.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="choosebar" style="margin: 40px 0;">
+            <OwnerRezWidget />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-sec2">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 port">
+          <h3>Why Book Direct?</h3>
+          <h2>Why Book Direct?</h2>
+          <h6 class="red-heading">More than just a better price</h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="cart">
+            <div class="wraper">
+              <span><span><img src="/images/i1.svg" alt="" /></span></span>
+              <h4>No Booking Fees</h4>
+            </div>
+            <p>Skip the platform service fees and pay just the rate plus taxes and cleaning.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="cart">
+            <div class="wraper">
+              <span><span><img src="/images/i2.svg" alt="" /></span></span>
+              <h4>Best Rates Guarantee</h4>
+            </div>
+            <p>20% off our standard Airbnb rates. We price-match to make sure you save.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="cart">
+            <div class="wraper">
+              <span><span><img src="/images/i3.svg" alt="" /></span></span>
+              <h4>Direct Communication</h4>
+            </div>
+            <p>Talk to us — the owners — directly. Quick responses, no middlemen.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="cart">
+            <div class="wraper">
+              <span><span><img src="/images/i4.svg" alt="" /></span></span>
+              <h4>Flexible Stays</h4>
+            </div>
+            <p>Long-term stays allowed. Reach out for custom rates on extended bookings.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
