@@ -1,19 +1,22 @@
 ---
-// Formspree endpoint for the newsletter signup.
-// Replace FORMSPREE_NEWSLETTER_ID with the form ID from your Formspree dashboard.
-const FORMSPREE_NEWSLETTER = 'https://formspree.io/f/FORMSPREE_NEWSLETTER_ID';
+// Mailchimp embedded signup form for the Chillax Creeks audience.
+const ACTION =
+  'https://chillaxcreeks.us21.list-manage.com/subscribe/post?u=9e80595ec1978e4a5a433dd4b&id=1a7a15f4b9&f_id=001ab9e6f0';
+const HONEYPOT_NAME = 'b_9e80595ec1978e4a5a433dd4b_1a7a15f4b9';
 ---
 
-<form action={FORMSPREE_NEWSLETTER} method="POST">
+<form action={ACTION} method="post" target="_blank" novalidate>
   <div class="form-wraper">
     <input
       type="email"
-      name="email"
+      name="EMAIL"
       placeholder="Enter Your Email"
       required
       aria-label="Email address"
     />
-    <input type="hidden" name="_subject" value="New Chillax Creek newsletter signup" />
-    <input type="submit" value="Subscribe" />
+    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+      <input type="text" name={HONEYPOT_NAME} tabindex="-1" value="" autocomplete="off" />
+    </div>
+    <input type="submit" name="subscribe" value="Subscribe" />
   </div>
 </form>

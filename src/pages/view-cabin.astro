@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import OwnerRezWidget from '../components/OwnerRezWidget.astro';
 import PhotoGallery from '../components/PhotoGallery.astro';
 import AmenityGrid from '../components/AmenityGrid.astro';
 
@@ -180,7 +179,6 @@ const sleeping = [
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h6 class="red-heading">Take the Tour</h6>
           <h2>View the Cabin</h2>
           <p class="vc-hero-lede">
             Browse every room and outdoor space at Chillax Creek. The cabin sleeps 8 across 3
@@ -239,10 +237,9 @@ const sleeping = [
   <section class="vc-amenities">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12 port">
-          <h3>Amenities</h3>
-          <h2>Full Amenity List</h2>
+        <div class="col-lg-12 text-center">
           <h6 class="red-heading">Everything included with your stay</h6>
+          <h2>Full Amenity List</h2>
         </div>
       </div>
       <AmenityGrid groups={amenityGroups} />
@@ -256,10 +253,13 @@ const sleeping = [
           <h6 class="red-heading">Save 20% over Airbnb rates</h6>
           <h2>Ready to book?</h2>
           <p>Check availability and reserve directly — no booking fees, fastest response time.</p>
-        </div>
-        <div class="col-lg-12">
-          <div class="choosebar" style="margin-top: 30px;">
-            <OwnerRezWidget />
+          <div class="vc-cta-actions">
+            <a href="/book-now/" class="vc-btn vc-btn-primary">
+              <i class="fa-solid fa-calendar-check"></i> Check availability
+            </a>
+            <a href="/contact-us/" class="vc-btn vc-btn-secondary">
+              <i class="fa-solid fa-comments"></i> Ask a question
+            </a>
           </div>
         </div>
       </div>
@@ -269,7 +269,7 @@ const sleeping = [
 
 <style is:global>
   .vc-hero {
-    padding: 80px 0 50px;
+    padding: 140px 0 50px;
   }
   .vc-hero-lede {
     max-width: 760px;
@@ -372,5 +372,43 @@ const sleeping = [
     color: #fff;
   }
   .vc-cta h2 { color: #fff; }
-  .vc-cta p { color: rgba(255, 255, 255, 0.8); }
+  .vc-cta p { color: rgba(255, 255, 255, 0.8); margin-bottom: 0; }
+  .vc-cta-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+  .vc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  .vc-btn-primary {
+    background: linear-gradient(135deg, #b40000 0%, #8a0000 100%);
+    color: #fff;
+  }
+  .vc-btn-primary:hover {
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgba(180, 0, 0, 0.35);
+  }
+  .vc-btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  .vc-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    transform: translateY(-1px);
+  }
 </style>

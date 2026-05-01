@@ -1,22 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import OwnerRezWidget from '../components/OwnerRezWidget.astro';
 import ReviewsSection from '../components/ReviewsSection.astro';
 import photos from '../photos.json';
+import reviewsData from '../reviews.json';
+
+const aggregate = (reviewsData as any).aggregate ?? { rating: 4.97, count: 49 };
 
 const heroSlides = [
-  [
-    { src: photos[31].src, label: 'Welcome to Chillax Creek' },
-    { src: photos[37].src, label: 'Loft (2 full beds)' },
-  ],
-  [
-    { src: photos[15].src, label: 'Private Creek' },
-    { src: photos[33].src, label: 'Tranquil Sanctuary' },
-  ],
-  [
-    { src: photos[3].src, label: 'Kitchen' },
-    { src: photos[6].src, label: 'King En-suite' },
-  ],
+  { src: photos[31].src, label: 'Welcome to Chillax Creek' },
+  { src: photos[15].src, label: 'Private Creek' },
+  { src: photos[3].src, label: 'Fully Stocked Kitchen' },
+  { src: photos[6].src, label: 'King En-suite' },
+  { src: photos[33].src, label: 'Tranquil Sanctuary' },
+  { src: photos[37].src, label: 'Loft Sleeps 4' },
 ];
 
 const amenities = [
@@ -111,17 +107,30 @@ const faqs = [
 
 <BaseLayout>
   <section class="home-banner">
-    <img src="/images/home-banner.jpg" alt="" class="main-img" />
-    <img src="/images/banner-abs.png" alt="" class="img-abs" />
-    <div class="content">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10 col-md-12 mx-auto">
-            <h1>Unpack &amp; Chillax!</h1>
-            <div class="choosebar">
-              <OwnerRezWidget />
-            </div>
-          </div>
+    <img src="/images/home-banner.jpg" alt="Chillax Creek cabin in Blue Ridge, Georgia" class="main-img" />
+    <div class="hero-rating-pill">
+      <span class="hrp-stars">★</span>
+      <strong>{aggregate.rating}</strong>
+      <span class="hrp-meta">· {aggregate.count}+ guest reviews</span>
+    </div>
+  </section>
+
+  <section class="home-intro">
+    <div class="container">
+      <div class="hero-intro-inner">
+        <h6 class="hero-kicker">Blue Ridge, Georgia</h6>
+        <h1>Unpack &amp; Chillax!</h1>
+        <p class="hero-lede">
+          A creekside 3-bedroom cabin sleeping 8, with a hot tub, game room, and a private
+          creek out back. Book direct and save 20%.
+        </p>
+        <div class="hero-actions">
+          <a href="/book-now/" class="hero-btn hero-btn-primary">
+            <i class="fa-solid fa-calendar-check"></i> Check availability
+          </a>
+          <a href="/view-cabin/" class="hero-btn hero-btn-secondary">
+            <i class="fa-solid fa-camera"></i> View the cabin
+          </a>
         </div>
       </div>
     </div>
@@ -150,18 +159,17 @@ const faqs = [
           <div class="swiper mySwiper hs1-slider">
             <div class="swiper-wrapper">
               {
-                heroSlides.map((slide) => (
+                heroSlides.map((s) => (
                   <div class="swiper-slide">
-                    {slide.map((s) => (
-                      <div class="content">
-                        <img src={s.src} alt={s.label} />
-                        <h5>{s.label}</h5>
-                      </div>
-                    ))}
+                    <div class="content">
+                      <img src={s.src} alt={s.label} />
+                      <h5>{s.label}</h5>
+                    </div>
                   </div>
                 ))
               }
             </div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </div>
