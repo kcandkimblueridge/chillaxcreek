@@ -1,0 +1,143 @@
+---
+import reviewsData from '../reviews.json';
+
+const reviews = Array.isArray(reviewsData) ? reviewsData : reviewsData.reviews ?? [];
+
+// Aggregate rating + count (manual — Airbnb's number when scraped was 4.97 / 25)
+const RATING = 4.97;
+const REVIEW_COUNT = 25;
+
+function formatDate(s: string) {
+  // Airbnb dates are "YYYY-MM-DD" — render as "Month YYYY"
+  const m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return s;
+  const [, y, mm] = m;
+  const months = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December',
+  ];
+  return `${months[parseInt(mm) - 1]} ${y}`;
+}
+---
+
+<section class="home-sec3 reviews-modern">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h6 class="red-heading">What our guests are saying</h6>
+        <h2>Guest Reviews</h2>
+        <div class="rating-summary">
+          <span class="stars">★★★★★</span>
+          <span class="rating-value">{RATING}</span>
+          <span class="rating-meta">based on {REVIEW_COUNT}+ Airbnb reviews</span>
+        </div>
+      </div>
+    </div>
+    <div class="row review-grid">
+      {
+        reviews.slice(0, 9).map((r: any) => (
+          <div class="col-lg-4 col-md-6 mb-4">
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">&ldquo;{r.text}&rdquo;</p>
+              <div class="review-meta">
+                <strong>{r.name}</strong>
+                <span>{formatDate(r.date)} · Airbnb</span>
+              </div>
+            </article>
+          </div>
+        ))
+      }
+    </div>
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a
+          href="https://www.airbnb.com/rooms/974620110074586016"
+          target="_blank"
+          rel="noopener"
+          class="main-btn"
+        >
+          Read all reviews on Airbnb
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .reviews-modern {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
+  }
+  .reviews-modern .rating-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 18px 0 40px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .reviews-modern .stars {
+    color: #ffb400;
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+  .reviews-modern .rating-value {
+    font-size: 28px;
+    font-weight: 600;
+    color: #000;
+  }
+  .reviews-modern .rating-meta {
+    color: #555;
+    font-size: 14px;
+  }
+
+  .review-grid {
+    margin-top: 20px;
+  }
+  .review-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 28px;
+    height: 100%;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    border: 1px solid #efefef;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .review-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  .review-card .review-stars {
+    color: #ffb400;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+  .review-card .review-text {
+    color: #333;
+    font-size: 15px;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin: 0 0 18px;
+    font-style: normal;
+  }
+  .review-card .review-meta {
+    border-top: 1px solid #eee;
+    padding-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .review-card .review-meta strong {
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .review-card .review-meta span {
+    color: #888;
+    font-size: 13px;
+  }
+</style>

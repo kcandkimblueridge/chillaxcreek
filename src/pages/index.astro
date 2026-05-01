@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import OwnerRezWidget from '../components/OwnerRezWidget.astro';
 import ContactForm from '../components/ContactForm.astro';
+import ReviewsSection from '../components/ReviewsSection.astro';
 import photos from '../photos.json';
 
 const heroSlides = [
@@ -268,61 +269,7 @@ const faqs = [
     </div>
   </section>
 
-  <section class="home-sec3">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h2>Guest Reviews</h2>
-          <h6 class="red-heading">★ 4.97 across 25+ Airbnb reviews</h6>
-
-          <ul class="nav nav-pills mb-3" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" type="button">
-                <img src="/images/i5.svg" alt="" /> Airbnb
-              </button>
-            </li>
-          </ul>
-
-          <div class="content-wrap">
-            <div class="review-box">
-              <h5>Josephine</h5>
-              <h6>August 2024</h6>
-              <p>
-                Our family of five had an incredible stay at the Chillax Cabin. The thoughtfulness
-                that went into creating an awesome experience was evident from the moment we
-                arrived. The cabin itself is beautiful, with a well-maintained interior that made us
-                feel right at home. The hosts were very responsive and ensured that the cabin was
-                well-stocked with everything we needed for our stay. We highly recommend staying at
-                this property for anyone looking for a perfect getaway.
-              </p>
-            </div>
-            <div class="review-box color-box">
-              <h5>Kayla</h5>
-              <h6>July 2024</h6>
-              <p>
-                I would give this 10 stars if I could! Unpack and Chillax was the most amazing
-                Airbnb my family and I have ever stayed at! The pictures do not do it justice! It
-                is even more beautiful and accommodating than it looks in the photos. Every single
-                detail was carefully thought about. You literally only need groceries and your bug
-                spray. The cabin is fully equipped with everything to cook with, all the games,
-                cozy atmosphere and thoughtful things like a smores bar.
-              </p>
-            </div>
-            <div class="review-box">
-              <h5>Meredith</h5>
-              <h6>July 2024</h6>
-              <p>
-                We visit many Airbnbs around the world and this was definitely one of the best! It
-                is clean, perfect location, private lot, wonderful amenities, lovely hosts, and they
-                allow dogs AND have EV charging! Literally could not be better if they tried! We
-                drove away at check out and were already planning our next getaway there!
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <ReviewsSection />
 
   <section class="home-sec4">
     <div class="container">

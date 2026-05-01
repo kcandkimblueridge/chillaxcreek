@@ -1,12 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import OwnerRezWidget from '../components/OwnerRezWidget.astro';
-import photos from '../photos.json';
+import PhotoGallery from '../components/PhotoGallery.astro';
+import AmenityGrid from '../components/AmenityGrid.astro';
 
-// Group amenities by category, sourced from the Airbnb listing.
 const amenityGroups = [
   {
     title: 'Scenic & Outdoor',
+    icon: 'fa-tree',
     items: [
       'Lake view',
       'Waterfront',
@@ -24,6 +25,7 @@ const amenityGroups = [
   },
   {
     title: 'Kitchen & Dining',
+    icon: 'fa-utensils',
     items: [
       'Full kitchen',
       'Refrigerator',
@@ -32,7 +34,7 @@ const amenityGroups = [
       'Dishes & silverware',
       'Freezer',
       'Dishwasher',
-      'Frigidaire stainless steel electric stove',
+      'Stainless steel electric stove',
       'Stainless steel single oven',
       'Hot water kettle',
       'Coffee maker',
@@ -48,6 +50,7 @@ const amenityGroups = [
   },
   {
     title: 'Entertainment',
+    icon: 'fa-table-tennis-paddle-ball',
     items: [
       'Ethernet connection',
       'TV',
@@ -61,6 +64,7 @@ const amenityGroups = [
   },
   {
     title: 'Bedroom & Laundry',
+    icon: 'fa-bed',
     items: [
       'Free washer (in unit)',
       'Free dryer (in unit)',
@@ -75,6 +79,7 @@ const amenityGroups = [
   },
   {
     title: 'Bathroom',
+    icon: 'fa-bath',
     items: [
       'Hair dryer',
       'Cleaning products',
@@ -87,6 +92,7 @@ const amenityGroups = [
   },
   {
     title: 'Heating & Cooling',
+    icon: 'fa-temperature-half',
     items: [
       'Central air conditioning',
       'Indoor fireplace (gas, wood-burning)',
@@ -96,23 +102,27 @@ const amenityGroups = [
   },
   {
     title: 'Internet & Office',
+    icon: 'fa-wifi',
     items: ['Wifi', 'Dedicated workspace'],
   },
   {
     title: 'Family',
+    icon: 'fa-people-group',
     items: ['Fireplace guards', 'Board games'],
   },
   {
     title: 'Parking & Facilities',
+    icon: 'fa-charging-station',
     items: [
       'Free parking on premises',
       'Free street parking',
       'Private hot tub',
-      'EV charger (level 2)',
+      'EV charger (Level 2)',
     ],
   },
   {
     title: 'Services',
+    icon: 'fa-paw',
     items: [
       'Pets allowed',
       'Luggage dropoff allowed',
@@ -123,6 +133,7 @@ const amenityGroups = [
   },
   {
     title: 'Safety',
+    icon: 'fa-shield-halved',
     items: [
       'Exterior security cameras on property',
       'Smoke alarm',
@@ -134,82 +145,91 @@ const amenityGroups = [
 ];
 
 const sleeping = [
-  { title: 'Bedroom 1 — Top level', subtitle: 'King bed with en-suite bathroom and private balcony' },
-  { title: 'Bedroom 2 — Main level', subtitle: 'Queen bed with TV, ceiling fan, and balcony access' },
-  { title: 'Bedroom 3 — Lower level', subtitle: 'Queen bed with en-suite bath and hot tub access' },
-  { title: 'Loft', subtitle: '2 full-size beds — perfect for kids or the young at heart' },
+  {
+    icon: 'fa-crown',
+    title: 'Bedroom 1 — Top Level',
+    subtitle: 'King bed',
+    details: 'En-suite bathroom and private balcony with backyard views',
+  },
+  {
+    icon: 'fa-bed',
+    title: 'Bedroom 2 — Main Level',
+    subtitle: 'Queen bed',
+    details: 'TV, ceiling fan, and balcony access',
+  },
+  {
+    icon: 'fa-hot-tub-person',
+    title: 'Bedroom 3 — Lower Level',
+    subtitle: 'Queen bed',
+    details: 'En-suite bathroom and direct access to the hot tub',
+  },
+  {
+    icon: 'fa-house-chimney',
+    title: 'Loft',
+    subtitle: '2 full beds',
+    details: 'Open loft above the living room — perfect for kids or the young at heart',
+  },
 ];
 ---
 
 <BaseLayout
   title="View the Cabin | Chillax Creek"
-  description="See every room and amenity at Chillax Creek — 45 photos, full amenity list, sleeping arrangement, and direct booking."
+  description="Tour every room and amenity at Chillax Creek — 45 photos, full amenity list, sleeping arrangement, and direct booking."
 >
-  <section class="home-sec1" style="padding-top: 60px;">
+  <section class="vc-hero">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 text-center">
           <h6 class="red-heading">Take the Tour</h6>
           <h2>View the Cabin</h2>
-          <p>
+          <p class="vc-hero-lede">
             Browse every room and outdoor space at Chillax Creek. The cabin sleeps 8 across 3
             bedrooms plus a loft, with 3 full bathrooms, a fully stocked kitchen, a private game
             room, hot tub, fire pit, and a creek running through the backyard.
           </p>
+          <div class="vc-hero-stats">
+            <div><strong>3</strong><span>Bedrooms</span></div>
+            <div><strong>5</strong><span>Beds</span></div>
+            <div><strong>3</strong><span>Baths</span></div>
+            <div><strong>8</strong><span>Sleeps</span></div>
+            <div><strong>★ 4.97</strong><span>Airbnb rating</span></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="home-sec2">
+  <section class="vc-gallery-section">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 port">
           <h3>Photo Gallery</h3>
           <h2>Photo Gallery</h2>
-          <h6 class="red-heading">45 photos of every space</h6>
+          <h6 class="red-heading">45 photos · Click any to enlarge</h6>
         </div>
       </div>
-      <div class="row">
-        {
-          photos.map((p) => (
-            <div class="col-lg-4 col-md-6 col-12 mb-4">
-              <figure style="margin: 0;">
-                <img
-                  src={p.src}
-                  alt={p.caption}
-                  loading="lazy"
-                  style="width:100%; height: 280px; object-fit: cover; border-radius: 12px;"
-                />
-                {p.caption && (
-                  <figcaption style="font-size: 0.9rem; color: #555; padding: 8px 4px 0;">
-                    {p.caption}
-                  </figcaption>
-                )}
-              </figure>
-            </div>
-          ))
-        }
-      </div>
+      <PhotoGallery />
     </div>
   </section>
 
-  <section class="home-sec1">
+  <section class="vc-sleeping">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 text-center">
           <h6 class="red-heading">Where Everyone Sleeps</h6>
           <h2>Sleeping Arrangement</h2>
         </div>
       </div>
-      <div class="row">
+      <div class="sleep-grid">
         {
           sleeping.map((s) => (
-            <div class="col-lg-6 col-md-6 mb-4">
-              <div class="cart">
-                <h4>{s.title}</h4>
-                <p>{s.subtitle}</p>
+            <div class="sleep-card">
+              <div class="sleep-icon">
+                <i class={`fa-solid ${s.icon}`}></i>
               </div>
+              <h4>{s.title}</h4>
+              <strong>{s.subtitle}</strong>
+              <p>{s.details}</p>
             </div>
           ))
         }
@@ -217,44 +237,141 @@ const sleeping = [
     </div>
   </section>
 
-  <section class="home-sec2">
+  <section class="vc-amenities">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 port">
-          <h3>Full Amenity List</h3>
+          <h3>Amenities</h3>
           <h2>Full Amenity List</h2>
           <h6 class="red-heading">Everything included with your stay</h6>
         </div>
       </div>
-      <div class="row" style="padding: 0 15px;">
-        {
-          amenityGroups.map((g) => (
-            <div class="col-lg-4 col-md-6 mb-4">
-              <h4 style="color: #B40000; font-weight: 600;">{g.title}</h4>
-              <ul style="list-style: none; padding-left: 0;">
-                {g.items.map((it) => (
-                  <li style="padding: 4px 0;">✓ {it}</li>
-                ))}
-              </ul>
-            </div>
-          ))
-        }
-      </div>
+      <AmenityGrid groups={amenityGroups} />
     </div>
   </section>
 
-  <section class="home-banner" style="height: auto; padding: 60px 0;">
-    <div class="content" style="position: static;">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10 col-md-12 mx-auto">
-            <h2 style="color: #fff; text-align: center;">Ready to book?</h2>
-            <div class="choosebar">
-              <OwnerRezWidget />
-            </div>
+  <section class="vc-cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto text-center">
+          <h6 class="red-heading">Save 20% over Airbnb rates</h6>
+          <h2>Ready to book?</h2>
+          <p>Check availability and reserve directly — no booking fees, fastest response time.</p>
+        </div>
+        <div class="col-lg-12">
+          <div class="choosebar" style="margin-top: 30px;">
+            <OwnerRezWidget />
           </div>
         </div>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<style is:global>
+  .vc-hero {
+    padding: 80px 0 50px;
+  }
+  .vc-hero-lede {
+    max-width: 760px;
+    margin: 0 auto 32px;
+    color: #555;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .vc-hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 30px;
+  }
+  .vc-hero-stats > div {
+    background: #fff;
+    border: 1px solid #efefef;
+    border-radius: 12px;
+    padding: 16px 24px;
+    min-width: 110px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+  .vc-hero-stats strong {
+    display: block;
+    color: #b40000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .vc-hero-stats span {
+    color: #666;
+    font-size: 13px;
+  }
+
+  .vc-gallery-section {
+    padding: 60px 0;
+    background: #fafafa;
+  }
+  .vc-sleeping {
+    padding: 80px 0;
+  }
+  .sleep-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .sleep-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+    border: 1px solid #efefef;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease;
+  }
+  .sleep-card:hover {
+    transform: translateY(-2px);
+  }
+  .sleep-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 16px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #b40000 0%, #8a0000 100%);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+  }
+  .sleep-card h4 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    color: #888;
+    font-weight: 500;
+  }
+  .sleep-card strong {
+    display: block;
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 10px;
+  }
+  .sleep-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .vc-amenities {
+    padding: 80px 0;
+    background: #fafafa;
+  }
+  .vc-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    color: #fff;
+  }
+  .vc-cta h2 { color: #fff; }
+  .vc-cta p { color: rgba(255, 255, 255, 0.8); }
+</style>
