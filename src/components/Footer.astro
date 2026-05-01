@@ -5,37 +5,39 @@ const year = new Date().getFullYear();
 
 <footer>
   <div class="container">
-    <img src="/images/f-abs1.svg" alt="" class="abs1" />
-    <img src="/images/f-abs2.png" alt="" class="abs2" />
-    <div class="row">
-      <div class="col-lg-12">
-        <h5>
-          Join our exclusive subscription service and gain access to a wealth of industry insights,
-          expert guidance, and the latest trends directly in your inbox.
-        </h5>
-        <NewsletterForm />
-      </div>
-      <div class="col-lg-4 col-md-12">
+    <div class="footer-newsletter">
+      <span class="footer-eyebrow">Stay in the loop</span>
+      <h5>Cabin updates, seasonal deals, and the occasional creek photo.</h5>
+      <p class="footer-sub">
+        Drop your email and we&rsquo;ll send you direct-booking discounts and Blue Ridge tips a
+        few times a year — never spam.
+      </p>
+      <NewsletterForm />
+    </div>
+
+    <div class="footer-cols">
+      <div class="footer-brand">
         <a href="/" class="f-logo"><img src="/images/logo.svg" alt="Chillax Creek" /></a>
         <p>
-          Unpack, unwind, and let the good times begin! Just bring yourself, a little laughter, and
-          prepare to create lasting memories with the ones you love.
+          Unpack, unwind, and let the good times begin. A creekside cabin in Blue Ridge, GA —
+          run by real humans, not a property manager.
         </p>
         <ul class="s-media">
           <li>
-            <a href="https://www.facebook.com/ChillaxCreek/" target="_blank" rel="noopener">
-              <i class="fa-brands fa-facebook"></i>
+            <a href="https://www.facebook.com/ChillaxCreek/" target="_blank" rel="noopener" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/chillax_creek/" target="_blank" rel="noopener">
+            <a href="https://www.instagram.com/chillax_creek/" target="_blank" rel="noopener" aria-label="Instagram">
               <i class="fa-brands fa-instagram"></i>
             </a>
           </li>
         </ul>
       </div>
-      <div class="col-lg-2 col-md-4 ms-auto">
-        <h4>Quick Links</h4>
+
+      <div>
+        <h4>Explore</h4>
         <ul class="menu">
           <li class="menu-item"><a href="/">Home</a></li>
           <li class="menu-item"><a href="/view-cabin/">View Cabin</a></li>
@@ -44,23 +46,30 @@ const year = new Date().getFullYear();
           <li class="menu-item"><a href="/book-now/">Book Now</a></li>
         </ul>
       </div>
-      <div class="col-lg-2 col-md-4">
+
+      <div>
         <h4>Reservation</h4>
         <ul class="menu">
           <li class="menu-item"><a href="/permits-license/">Permits &amp; License</a></li>
           <li class="menu-item"><a href="/rules-regulations/">Rules &amp; Regulations</a></li>
         </ul>
       </div>
-      <div class="col-lg-2 col-md-4 ms-auto">
-        <h4>Legal Information</h4>
+
+      <div>
+        <h4>Legal</h4>
         <ul class="menu">
           <li class="menu-item"><a href="/terms-conditions/">Terms &amp; Conditions</a></li>
           <li class="menu-item"><a href="/privacy-policy/">Privacy Policy</a></li>
         </ul>
       </div>
-      <div class="col-lg-12">
-        <h6>Copyright © {year} Chillax Creek. All Rights Reserved.</h6>
-      </div>
+    </div>
+
+    <div class="footer-bar">
+      <h6>© {year} Chillax Creek. All rights reserved.</h6>
+      <span class="footer-tagline">
+        <i class="fa-solid fa-mountain-sun" aria-hidden="true"></i>
+        Made with care in Blue Ridge, GA
+      </span>
     </div>
   </div>
 </footer>

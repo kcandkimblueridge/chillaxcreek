@@ -66,44 +66,38 @@ const rules = [
   title="Rules & Regulations | Chillax Creek"
   description="House rules and regulations for guests at Chillax Creek cabin in Blue Ridge, Georgia."
 >
-  <section class="home-sec1" style="padding-top: 140px;">
+  <section class="legal-hero">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h6 class="red-heading">Please read before booking</h6>
-          <h2>Rules &amp; Regulations</h2>
-          <p>
-            Chillax Creek is our home away from home, and we hope it becomes that for you too. To
-            keep the cabin in top shape for every guest, please review and follow these house rules
-            during your stay.
-          </p>
-        </div>
-      </div>
+      <h6 class="red-heading">Please read before booking</h6>
+      <h2>Rules &amp; Regulations</h2>
+      <p>
+        Chillax Creek is our home away from home, and we hope it becomes that for you too. To keep
+        the cabin in top shape for every guest, please review and follow these house rules during
+        your stay.
+      </p>
     </div>
   </section>
 
-  <section class="home-sec4">
+  <section class="legal-content">
     <div class="container">
-      <div class="row">
+      <div class="info-card-grid">
         {
           rules.map((r) => (
-            <div class="col-lg-6 col-md-6 mb-4">
-              <h4 style="color: #B40000; font-weight: 600;">{r.title}</h4>
-              <ul style="padding-left: 20px;">
+            <article class="info-card">
+              <h4>{r.title}</h4>
+              <ul>
                 {r.items.map((it) => (
-                  <li style="padding: 4px 0;">{it}</li>
+                  <li>{it}</li>
                 ))}
               </ul>
-            </div>
+            </article>
           ))
         }
       </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <p style="margin-top: 30px;">
-            Questions about any of the above? <a href="/contact-us/">Reach out</a> before you book — we&rsquo;re happy to clarify.
-          </p>
-        </div>
+
+      <div class="legal-footnote">
+        Questions about any of the above? <a href="/contact-us/">Reach out</a> before you book —
+        we&rsquo;re happy to clarify.
       </div>
     </div>
   </section>

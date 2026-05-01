@@ -1,85 +1,67 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const items = [
+  {
+    title: 'Short-Term Rental Permit',
+    body: 'We hold an active short-term rental permit issued by Fannin County, Georgia. The permit is renewed annually and is on file with the local jurisdiction.',
+  },
+  {
+    title: 'Lodging Tax Registration',
+    body: 'Chillax Creek is registered to collect and remit Georgia state sales tax and Fannin County hotel-motel (lodging) tax on all qualifying stays. These are passed through transparently in your booking.',
+  },
+  {
+    title: 'Business License',
+    body: 'The property is operated by a registered Georgia business entity. Tax ID and business license details are available on request.',
+  },
+  {
+    title: 'Insurance',
+    body: 'We maintain commercial short-term-rental insurance covering both property and liability. Booking platforms (Airbnb, Vrbo) provide additional Host Protection coverage for those reservations.',
+  },
+  {
+    title: 'Safety Inspections',
+    body: 'Smoke alarms, carbon monoxide detectors, and fire extinguishers are tested on a regular schedule. A first aid kit is located in the kitchen. Emergency contact info is posted in the cabin.',
+  },
+  {
+    title: 'Privacy & Cameras',
+    bodyHtml:
+      'Exterior security cameras are present on the property (driveway and main entry). <strong>No cameras of any kind exist inside the cabin or in any private outdoor area</strong> (hot tub, fire pit, balconies). See our <a href="/privacy-policy/">privacy policy</a> for details.',
+  },
+];
 ---
 
 <BaseLayout
   title="Permits & License | Chillax Creek"
   description="Short-term rental permits and licensing information for Chillax Creek in Fannin County, Georgia."
 >
-  <section class="home-sec1" style="padding-top: 140px;">
+  <section class="legal-hero">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h6 class="red-heading">Compliant short-term rental</h6>
-          <h2>Permits &amp; License</h2>
-          <p>
-            Chillax Creek operates as a fully permitted and licensed short-term rental in Fannin
-            County, Georgia. Below is an overview of the registrations and compliance items that
-            keep us in good standing — and keep our guests protected.
-          </p>
-        </div>
-      </div>
+      <h6 class="red-heading">Compliant short-term rental</h6>
+      <h2>Permits &amp; License</h2>
+      <p>
+        Chillax Creek operates as a fully permitted and licensed short-term rental in Fannin
+        County, Georgia. Below is an overview of the registrations and compliance items that keep
+        us in good standing — and keep our guests protected.
+      </p>
     </div>
   </section>
 
-  <section class="home-sec4">
+  <section class="legal-content">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 mb-4">
-          <h4 style="color: #B40000; font-weight: 600;">Short-Term Rental Permit</h4>
-          <p>
-            We hold an active short-term rental permit issued by Fannin County, Georgia. The
-            permit is renewed annually and is on file with the local jurisdiction.
-          </p>
-        </div>
-        <div class="col-lg-6 col-md-6 mb-4">
-          <h4 style="color: #B40000; font-weight: 600;">Lodging Tax Registration</h4>
-          <p>
-            Chillax Creek is registered to collect and remit Georgia state sales tax and Fannin
-            County hotel-motel (lodging) tax on all qualifying stays. These are passed through
-            transparently in your booking.
-          </p>
-        </div>
-        <div class="col-lg-6 col-md-6 mb-4">
-          <h4 style="color: #B40000; font-weight: 600;">Business License</h4>
-          <p>
-            The property is operated by a registered Georgia business entity. Tax ID and business
-            license details are available on request.
-          </p>
-        </div>
-        <div class="col-lg-6 col-md-6 mb-4">
-          <h4 style="color: #B40000; font-weight: 600;">Insurance</h4>
-          <p>
-            We maintain commercial short-term-rental insurance covering both property and liability.
-            Booking platforms (Airbnb, Vrbo) provide additional Host Protection coverage for
-            those reservations.
-          </p>
-        </div>
-        <div class="col-lg-6 col-md-6 mb-4">
-          <h4 style="color: #B40000; font-weight: 600;">Safety Inspections</h4>
-          <p>
-            Smoke alarms, carbon monoxide detectors, and fire extinguishers are tested on a regular
-            schedule. A first aid kit is located in the kitchen. Emergency contact info is posted in
-            the cabin.
-          </p>
-        </div>
-        <div class="col-lg-6 col-md-6 mb-4">
-          <h4 style="color: #B40000; font-weight: 600;">Privacy & Cameras</h4>
-          <p>
-            Exterior security cameras are present on the property (driveway and main entry).
-            <strong>No cameras of any kind exist inside the cabin or in any private outdoor area</strong>
-            (hot tub, fire pit, balconies). See our <a href="/privacy-policy/">privacy policy</a>
-            for details.
-          </p>
-        </div>
+      <div class="info-card-grid">
+        {
+          items.map((it) => (
+            <article class="info-card">
+              <h4>{it.title}</h4>
+              {it.bodyHtml ? <p set:html={it.bodyHtml} /> : <p>{it.body}</p>}
+            </article>
+          ))
+        }
       </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <p style="margin-top: 20px;">
-            Need our specific permit or license number for a corporate booking, insurance claim, or
-            tax form? <a href="/contact-us/">Get in touch</a> and we&rsquo;ll send it over.
-          </p>
-        </div>
+
+      <div class="legal-footnote">
+        Need our specific permit or license number for a corporate booking, insurance claim, or
+        tax form? <a href="/contact-us/">Get in touch</a> and we&rsquo;ll send it over.
       </div>
     </div>
   </section>
