@@ -1146,33 +1146,40 @@ section.home-features {
 }
 .group_slide .swiper-pagination {
   position: absolute;
-  top: 5px;
+  top: 0;
   left: 0;
+  right: 0;
   bottom: unset;
+  height: 36px;
   font-size: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
+  pointer-events: none;
 }
 .group_slide .swiper-pagination::after {
   content: "Out of";
-  width: 50px;
   color: var(--cc-text);
   font-family: Poppins;
   font-size: 14px;
   font-weight: 500;
+  line-height: 1;
   position: absolute;
   inset: 0;
-  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .group_slide .swiper-pagination span {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--cc-text);
-  text-align: center;
   font-family: Poppins;
   font-size: 14px;
   font-weight: 500;
+  line-height: 1;
 }
 .group_slide .swiper-pagination span.swiper-pagination-current {
   display: inline-flex;
@@ -1193,7 +1200,9 @@ section.home-features {
   font-size: 18px;
   font-weight: 600;
   position: absolute;
-  top: 8px;
+  top: 0;
+  margin: 0;
+  --swiper-navigation-size: 36px;
   width: 36px;
   height: 36px;
   border-radius: 999px;
@@ -1203,6 +1212,8 @@ section.home-features {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  pointer-events: auto;
+  z-index: 2;
   transition: background 0.15s ease, transform 0.15s ease, color 0.15s ease;
 }
 .group_slide .swiper-button-next:hover,
